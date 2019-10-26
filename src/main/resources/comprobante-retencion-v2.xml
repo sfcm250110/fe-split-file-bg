@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<comprobanteRetencion id="comprobante" version="2.0.0">
+    <infoTributaria>
+        <ambiente>1</ambiente>
+        <tipoEmision>1</tipoEmision>
+        <razonSocial>BANCO GUAYAQUIL S.A.</razonSocial>
+		<nombreComercial>BANCO GUAYAQUIL S.A.</nombreComercial>
+        <ruc>0990049459001</ruc>
+        <claveAcceso>2410201107179214673900110020010000000011234567815</claveAcceso>
+        <codDoc>07</codDoc>
+        <estab>001</estab>
+        <ptoEmi>003</ptoEmi>
+        <secuencial>000000966</secuencial>
+        <dirMatriz>PICHINCHA 105 - 107 Y FRANCISCO DE PAULA YCAZA</dirMatriz>
+    </infoTributaria>
+    <infoCompRetencion>
+		<fechaEmision>29/03/2019</fechaEmision>
+		<dirEstablecimiento>PICHINCHA 105 - 107 Y FRANCISCO DE PAULA YCAZA</dirEstablecimiento>
+		<contribuyenteEspecial>6925</contribuyenteEspecial>
+		<obligadoContabilidad>SI</obligadoContabilidad>
+		<tipoIdentificacionSujetoRetenido>04</tipoIdentificacionSujetoRetenido>
+        -------------------------------------------
+        <tipoSujetoRetenido>01</tipoSujetoRetenido>
+        -----------------------
+        <parteRel>SI</parteRel>
+		<razonSocialSujetoRetenido>CERVECERIA NACIONAL CN S A</razonSocialSujetoRetenido>
+		<identificacionSujetoRetenido>0990023549001</identificacionSujetoRetenido>
+		<periodoFiscal>03/2019</periodoFiscal>
+	</infoCompRetencion>
+    --------------
+    <docsSustento>
+        <docSustento>
+            <codSustento>10</codSustento>
+            <codDocSustento>19</codDocSustento>
+            <numDocSustento>002001000000001</numDocSustento>
+            <fechaEmisionDocSustento>20/01/2012</fechaEmisionDocSustento>
+            <fechaRegistroContable>15/03/2012</fechaRegistroContable>
+            <numAutDocSustento>2110201116</numAutDocSustento>
+            <pagoLocExt>01</pagoLocExt>
+            <tipoRegi>01</tipoRegi>
+            <paisEfecPago>580<paisEfecPago>
+            <aplicConvDobTrib>NO</aplicConvDobTrib>
+            <pagExtSujRetNorLeg>NO</pagExtSujRetNorLeg>
+            <pagoRegFis>SI</pagoRegFis>
+            <totalComprobantesReembolso>138.19</totalComprobantesReembolso>
+            <totalBaseImponibleReembolso>133.13</totalBaseImponibleReembolso>
+            <totalImpuestoReembolso>3.25</totalImpuestoReembolso>
+            <totalSinImpuestos>133.13</totalSinImpuestos>
+            <importeTotal>68.19</importeTotal>
+            <impuestosDocSustento>
+                <impuestoDocSustento>
+                    <codImpuestoDocSustento>2</codImpuestoDocSustento>
+                    <codigoPorcentaje>5</codigoPorcentaje>
+                    <baseImponible>1000</baseImponible>
+                    <tarifa>0</tarifa>
+                    <valorImpuesto>3.25</valorImpuesto>
+                </impuestoDocSustento>
+            </impuestosDocSustento>
+            <retenciones>
+                <retencion>
+                    <codigo>1</codigo>
+                    <codigoRetencion>345</codigoRetencion>
+                    <baseImponible>1000</baseImponible>
+                    <porcentajeRetener>0</porcentajeRetener>
+                    <valorRetenido>00.00</valorRetenido>
+                    <dividendos>
+                        <fechaPagoDiv>15/03/2012</fechaPagoDiv>
+                        <imRentaSoc>102.54</imRentaSoc>
+                        <ejerFisUtDiv>2012</ejerFisUtDiv>
+                    </dividendos>
+                </retencion>
+            </retenciones>
+            <reembolsoDetalle>
+                <tipoIdentificacionProveedorReembolso>04</tipoIdentificacionProveedorReembolso>
+                <identificacionProveedorReembolso>1760013210001</identificacionProveedorReembolso>
+                <identificacionProveedorReembolso>1760013210001</identificacionProveedorReembolso>
+                <codPaisPagoProveedorReembolso>593</codPaisPagoProveedorReembolso>
+                <tipoProveedorReembolso>01</tipoProveedorReembolso>
+                <codDocReembolso>01</codDocReembolso >
+                <estabDocReembolso>001</estabDocReembolso>
+                <ptoEmiDocReembolso>501</ptoEmiDocReembolso>
+                <secuencialDocReembolso>000000008</secuencialDocReembolso>
+                <fechaEmisionDocReembolso>04/03/2013</fechaEmisionDocReembolso>
+                <numeroAutorizacionDocReemb>0403201301179226110400110015010000000081234567816</numeroAutorizacionDocReemb >
+                <detalleImpuestos>
+                    <detalleImpuesto>
+                        <codigo>2</codigo>
+                        <codigoPorcentaje>0</codigoPorcentaje>
+                        <tarifa>0</tarifa>
+                        <baseImponibleReembolso>68.19</baseImponibleReembolso>
+                        <impuestoReembolso>0.00</impuestoReembolso >
+                    </detalleImpuesto>
+                    <detalleImpuesto>
+                        <codigo>3</codigo>
+                        <codigoPorcentaje>3072<</codigoPorcentaje>
+                        <tarifa>5</tarifa>
+                        <baseImponibleReembolso>64.94</baseImponibleReembolso>
+                        <impuestoReembolso>3.25</impuestoReembolso >
+                    </detalleImpuesto>
+                </detalleImpuestos>
+            </reembolsoDetalle>
+            
+            </reembolsos>
+
+            <Pagos>
+            <Pagos>
+        </docSustento>
+    </docsSustento>
+</comprobanteRetencion>
