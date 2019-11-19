@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class CabeceraLiquidacionCompras implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private String tipoRegistro;
 	private String codDoc;
 	private String estab;
@@ -14,29 +14,26 @@ public class CabeceraLiquidacionCompras implements Serializable {
 	private String fechaEmision;
 	private String horaEmision;
 	private String dirEstablecimiento;
-	private String tipoIDentifComprador;
-	private String razonSocComprador;
-	private String identifiComprador;
+	private String tipoIdentificacionProveedor;
+	private String razonSocialProveedor;
+	private String identificacionProveedor;
+	private String direccionProveedor;
 	private String totalSinImpuesto;
 	private String totalDescuento;
-	private String propina;
+	private String codigoDocumentoReebolso;
+	private String totalComprobanteReebolso;
+	private String totalBaseImponibleReebolso;
+	private String totalImpuestoReembolso;
 	private String importeTotal;
 	private String moneda;
-	private String guiaRemision;
-	private String valorPagar;
-	private String numGenerado;
 	private String fechaVigencia;
 	private String oficinaBg;
-	private String porcIva;
+	private String porcentajeIva;
 	private String claveAcceso;
-	private String dirComprador;
-	private String compCodigo;
-	private String compTarifa;
-	private String compSolidaria;
-	private String fillerCabFac;
+	private String fillerCabeceraLiquidacionCompras;
 
 	public String getTipoRegistro() {
-		return this.tipoRegistro;
+		return tipoRegistro;
 	}
 
 	public void setTipoRegistro(String tipoRegistro) {
@@ -44,7 +41,7 @@ public class CabeceraLiquidacionCompras implements Serializable {
 	}
 
 	public String getCodDoc() {
-		return this.codDoc;
+		return codDoc;
 	}
 
 	public void setCodDoc(String codDoc) {
@@ -52,7 +49,7 @@ public class CabeceraLiquidacionCompras implements Serializable {
 	}
 
 	public String getEstab() {
-		return this.estab;
+		return estab;
 	}
 
 	public void setEstab(String estab) {
@@ -60,7 +57,7 @@ public class CabeceraLiquidacionCompras implements Serializable {
 	}
 
 	public String getPtoEmision() {
-		return this.ptoEmision;
+		return ptoEmision;
 	}
 
 	public void setPtoEmision(String ptoEmision) {
@@ -68,7 +65,7 @@ public class CabeceraLiquidacionCompras implements Serializable {
 	}
 
 	public String getSecuencial() {
-		return this.secuencial;
+		return secuencial;
 	}
 
 	public void setSecuencial(String secuencial) {
@@ -76,47 +73,63 @@ public class CabeceraLiquidacionCompras implements Serializable {
 	}
 
 	public String getFechaEmision() {
-		return this.fechaEmision;
+		return fechaEmision;
 	}
 
 	public void setFechaEmision(String fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
 
+	public String getHoraEmision() {
+		return horaEmision;
+	}
+
+	public void setHoraEmision(String horaEmision) {
+		this.horaEmision = horaEmision;
+	}
+
 	public String getDirEstablecimiento() {
-		return this.dirEstablecimiento;
+		return dirEstablecimiento;
 	}
 
 	public void setDirEstablecimiento(String dirEstablecimiento) {
 		this.dirEstablecimiento = dirEstablecimiento;
 	}
 
-	public String getTipoIDentifComprador() {
-		return this.tipoIDentifComprador;
+	public String getTipoIdentificacionProveedor() {
+		return tipoIdentificacionProveedor;
 	}
 
-	public void setTipoIDentifComprador(String tipoIDentifComprador) {
-		this.tipoIDentifComprador = tipoIDentifComprador;
+	public void setTipoIdentificacionProveedor(String tipoIdentificacionProveedor) {
+		this.tipoIdentificacionProveedor = tipoIdentificacionProveedor;
 	}
 
-	public String getRazonSocComprador() {
-		return this.razonSocComprador;
+	public String getRazonSocialProveedor() {
+		return razonSocialProveedor;
 	}
 
-	public void setRazonSocComprador(String razonSocComprador) {
-		this.razonSocComprador = razonSocComprador;
+	public void setRazonSocialProveedor(String razonSocialProveedor) {
+		this.razonSocialProveedor = razonSocialProveedor;
 	}
 
-	public String getIdentifiComprador() {
-		return this.identifiComprador;
+	public String getIdentificacionProveedor() {
+		return identificacionProveedor;
 	}
 
-	public void setIdentifiComprador(String identifiComprador) {
-		this.identifiComprador = identifiComprador;
+	public void setIdentificacionProveedor(String identificacionProveedor) {
+		this.identificacionProveedor = identificacionProveedor;
+	}
+
+	public String getDireccionProveedor() {
+		return direccionProveedor;
+	}
+
+	public void setDireccionProveedor(String direccionProveedor) {
+		this.direccionProveedor = direccionProveedor;
 	}
 
 	public String getTotalSinImpuesto() {
-		return this.totalSinImpuesto;
+		return totalSinImpuesto;
 	}
 
 	public void setTotalSinImpuesto(String totalSinImpuesto) {
@@ -124,23 +137,47 @@ public class CabeceraLiquidacionCompras implements Serializable {
 	}
 
 	public String getTotalDescuento() {
-		return this.totalDescuento;
+		return totalDescuento;
 	}
 
 	public void setTotalDescuento(String totalDescuento) {
 		this.totalDescuento = totalDescuento;
 	}
 
-	public String getPropina() {
-		return this.propina;
+	public String getCodigoDocumentoReebolso() {
+		return codigoDocumentoReebolso;
 	}
 
-	public void setPropina(String propina) {
-		this.propina = propina;
+	public void setCodigoDocumentoReebolso(String codigoDocumentoReebolso) {
+		this.codigoDocumentoReebolso = codigoDocumentoReebolso;
+	}
+
+	public String getTotalComprobanteReebolso() {
+		return totalComprobanteReebolso;
+	}
+
+	public void setTotalComprobanteReebolso(String totalComprobanteReebolso) {
+		this.totalComprobanteReebolso = totalComprobanteReebolso;
+	}
+
+	public String getTotalBaseImponibleReebolso() {
+		return totalBaseImponibleReebolso;
+	}
+
+	public void setTotalBaseImponibleReebolso(String totalBaseImponibleReebolso) {
+		this.totalBaseImponibleReebolso = totalBaseImponibleReebolso;
+	}
+
+	public String getTotalImpuestoReembolso() {
+		return totalImpuestoReembolso;
+	}
+
+	public void setTotalImpuestoReembolso(String totalImpuestoReembolso) {
+		this.totalImpuestoReembolso = totalImpuestoReembolso;
 	}
 
 	public String getImporteTotal() {
-		return this.importeTotal;
+		return importeTotal;
 	}
 
 	public void setImporteTotal(String importeTotal) {
@@ -148,31 +185,15 @@ public class CabeceraLiquidacionCompras implements Serializable {
 	}
 
 	public String getMoneda() {
-		return this.moneda;
+		return moneda;
 	}
 
 	public void setMoneda(String moneda) {
 		this.moneda = moneda;
 	}
 
-	public String getGuiaRemision() {
-		return this.guiaRemision;
-	}
-
-	public void setGuiaRemision(String guiaRemision) {
-		this.guiaRemision = guiaRemision;
-	}
-
-	public String getNumGenerado() {
-		return this.numGenerado;
-	}
-
-	public void setNumGenerado(String numGenerado) {
-		this.numGenerado = numGenerado;
-	}
-
 	public String getFechaVigencia() {
-		return this.fechaVigencia;
+		return fechaVigencia;
 	}
 
 	public void setFechaVigencia(String fechaVigencia) {
@@ -180,90 +201,42 @@ public class CabeceraLiquidacionCompras implements Serializable {
 	}
 
 	public String getOficinaBg() {
-		return this.oficinaBg;
+		return oficinaBg;
 	}
 
 	public void setOficinaBg(String oficinaBg) {
 		this.oficinaBg = oficinaBg;
 	}
 
-	public String getPorcIva() {
-		return this.porcIva;
+	public String getPorcentajeIva() {
+		return porcentajeIva;
 	}
 
-	public void setPorcIva(String porcIva) {
-		this.porcIva = porcIva;
+	public void setPorcentajeIva(String porcentajeIva) {
+		this.porcentajeIva = porcentajeIva;
 	}
 
 	public String getClaveAcceso() {
-		return this.claveAcceso;
+		return claveAcceso;
 	}
 
 	public void setClaveAcceso(String claveAcceso) {
 		this.claveAcceso = claveAcceso;
 	}
 
-	public String getFillerCabFac() {
-		return this.fillerCabFac;
+	public String getFillerCabeceraLiquidacionCompras() {
+		return fillerCabeceraLiquidacionCompras;
 	}
 
-	public void setFillerCabFac(String fillerCabFac) {
-		this.fillerCabFac = fillerCabFac;
+	public void setFillerCabeceraLiquidacionCompras(String fillerCabeceraLiquidacionCompras) {
+		this.fillerCabeceraLiquidacionCompras = fillerCabeceraLiquidacionCompras;
 	}
 
-	public String getHoraEmision() {
-		return this.horaEmision;
-	}
-
-	public void setHoraEmision(String horaEmision) {
-		this.horaEmision = horaEmision;
-	}
-
-	public String getDirComprador() {
-		return this.dirComprador;
-	}
-
-	public void setDirComprador(String dirComprador) {
-		this.dirComprador = dirComprador;
-	}
-
-	public String getCompCodigo() {
-		return this.compCodigo;
-	}
-
-	public void setCompCodigo(String compCodigo) {
-		this.compCodigo = compCodigo;
-	}
-
-	public String getCompTarifa() {
-		return this.compTarifa;
-	}
-
-	public void setCompTarifa(String compTarifa) {
-		this.compTarifa = compTarifa;
-	}
-
-	public String getCompSolidaria() {
-		return this.compSolidaria;
-	}
-
-	public void setCompSolidaria(String compSolidaria) {
-		this.compSolidaria = compSolidaria;
-	}
-
-	public String getValorPagar() {
-		return this.valorPagar;
-	}
-
-	public void setValorPagar(String valorPagar) {
-		this.valorPagar = valorPagar;
-	}
-
+	@Override
 	public String toString() {
-		return "Cabecera{tipoRegistro=" + this.tipoRegistro + ", codDoc=" + this.codDoc + ", estab=" + this.estab + ", ptoEmision=" + this.ptoEmision + ", secuencial=" + this.secuencial + ", fechaEmision=" + this.fechaEmision + ", horaEmision=" + this.horaEmision + ", dirEstablecimiento=" + this.dirEstablecimiento + ", tipoIDentifComprador="
-				+ this.tipoIDentifComprador + ", razonSocComprador=" + this.razonSocComprador + ", identifiComprador=" + this.identifiComprador + ", totalSinImpuesto=" + this.totalSinImpuesto + ", totalDescuento=" + this.totalDescuento + ", propina=" + this.propina + ", importeTotal=" + this.importeTotal + ", moneda=" + this.moneda
-				+ ", guiaRemision=" + this.guiaRemision + ", numGenerado=" + this.numGenerado + ", fechaVigencia=" + this.fechaVigencia + ", oficinaBg=" + this.oficinaBg + ", porcIva=" + this.porcIva + ", claveAcceso=" + this.claveAcceso + ", dirComprador=" + this.dirComprador + ", compCodigo=" + this.compCodigo + ", compTarifa=" + this.compTarifa
-				+ ", compSolidaria=" + this.compSolidaria + ", fillerCabFac=" + this.fillerCabFac + '}';
+		return "CabeceraLiquidacionCompras [tipoRegistro=" + tipoRegistro + ", codDoc=" + codDoc + ", estab=" + estab + ", ptoEmision=" + ptoEmision + ", secuencial=" + secuencial + ", fechaEmision=" + fechaEmision + ", horaEmision=" + horaEmision + ", dirEstablecimiento=" + dirEstablecimiento + ", tipoIdentificacionProveedor=" + tipoIdentificacionProveedor + ", razonSocialProveedor="
+				+ razonSocialProveedor + ", identificacionProveedor=" + identificacionProveedor + ", direccionProveedor=" + direccionProveedor + ", totalSinImpuesto=" + totalSinImpuesto + ", totalDescuento=" + totalDescuento + ", codigoDocumentoReebolso=" + codigoDocumentoReebolso + ", totalComprobanteReebolso=" + totalComprobanteReebolso + ", totalBaseImponibleReebolso="
+				+ totalBaseImponibleReebolso + ", totalImpuestoReembolso=" + totalImpuestoReembolso + ", importeTotal=" + importeTotal + ", moneda=" + moneda + ", fechaVigencia=" + fechaVigencia + ", oficinaBg=" + oficinaBg + ", porcentajeIva=" + porcentajeIva + ", claveAcceso=" + claveAcceso + ", fillerCabeceraLiquidacionCompras=" + fillerCabeceraLiquidacionCompras + "]";
 	}
-	
+
 }

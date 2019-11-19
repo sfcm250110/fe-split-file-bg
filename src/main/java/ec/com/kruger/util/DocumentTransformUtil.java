@@ -36,11 +36,13 @@ public abstract interface DocumentTransformUtil {
 	// TIPOS DE LINEA
 	// --------------------------------------------------------------------------------------------------------------------
 	public static final String TIPO_LINEA_CABECERA_FACT = "C";
+	public static final String TIPO_LINEA_CABECERA_COMPROBANTE = "C";
 	public static final String TIPO_LINEA_IMP = "I";
 	public static final String TIPO_LINEA_DET = "D";
 	public static final String TIPO_LINEA_RET = "R";
 	public static final String TIPO_LINEA_ADICIONAL = "A";
 	public static final String TIPO_LINEA_MOTIVO = "M";
+	public static final String TIPO_LINEA_REEMBOLSO = "R";
 
 	// --------------------------------------------------------------------------------------------------------------------
 	// DEFINICION DE CABECERA DE FACTURAS ELECTRONICAS
@@ -355,5 +357,116 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGEA07_INFO_ADICIONAL_1 = "100";
 	public static final String UGEA07_INFO_ADICIONAL_2 = "100";
 	public static final String FILLER_AD_RET = "182";
+	
+	// --------------------------------------------------------------------------------------------------------------------
+	// DEFINICION DE CABECERA DE LIQUIDACION DE COMPRAS
+	// --------------------------------------------------------------------------------------------------------------------
+	public static final String UGEC03_TIPO_REGISTRO = "1";
+	public static final String UGEC03_CODIGO_DOCUMENTO = "2";
+	public static final String UGEC03_ESTABLECIMIENTO = "3";
+	public static final String UGEC03_PUNTO_EMISION = "3";
+	public static final String UGEC03_SECUENCIAL = "9";
+	public static final String UGEC03_FECHA_EMISION = "8";
+	public static final String UGEC03_HORA_EMISION = "6";
+	public static final String UGEC03_DIRECCION_ESTABLECIMIENTO = "60";
+	public static final String UGEC03_TIPO_IDENTIFICACION_PROVEEDOR = "2";
+	public static final String UGEC03_RAZON_SOCIAL_PROVEEDOR = "80";
+	public static final String UGEC03_IDENTIFICACION_PROVEEDOR = "13";
+	public static final String UGEC03_DIRECCION_PROVEEDOR = "25";
+	public static final String UGEC03_TOTAL_SIN_IMPUESTO = "12,2";
+	public static final String UGEC03_TOTAL_DESCUENTO = "12,2";
+	public static final String UGEC03_CODIGO_DOCUMENTO_REEMBOLSO = "2";
+	public static final String UGEC03_TOTAL_COMPROBANTE_REEMBOLSO = "12,2";
+	public static final String UGEC03_TOTAL_BASE_IMPONIBLE_REEMBOLSO = "12,2";
+	public static final String UGEC03_TOTAL_IMPUESTO_REEMBOLSO = "12,2";
+	public static final String UGEC03_IMPORTE_TOTAL = "12,2";
+	public static final String UGEC03_MONEDA = "15";
+	public static final String UGEC03_FECHA_VIGENCIA = "8";
+	public static final String UGEC03_OFICINA_BG = "3";
+	public static final String UGEC03_PORCENTAJE_IVA = "3";
+	public static final String UGEC03_CLAVE_ACCESO = "50";
+	public static final String UGEC03_FILLER_CABECERA_LIQUIDACION_COMPRAS = "35";
+	
+	// --------------------------------------------------------------------------------------------------------------------
+	// DEFINICION TOTAL IMPUESTOS LIQUIDACION DE COMPRAS
+	// --------------------------------------------------------------------------------------------------------------------
+	public static final String UGEI03_TIPO_REGISTRO = "1";
+	public static final String UGEI03_CODIGO_DOCUMENTO = "2";
+	public static final String UGEI03_ESTABLECIMIENTO = "3";
+	public static final String UGEI03_PUNTO_EMISION = "3";
+	public static final String UGEI03_SECUENCIAL = "9";
+	public static final String UGEI03_TOTAL_CODIGO = "1";
+	public static final String UGEI03_TOTAL_CODIGO_PORCENTAJE = "5";
+	public static final String UGEI03_TOTAL_DESCUENTO_ADICIONAL = "12,2";
+	public static final String UGEI03_TOTAL_BASE_IMPONIBLE = "12,2";
+	public static final String UGEI03_TOTAL_TARIFA = "12,2";
+	public static final String UGEI03_TOTAL_VALOR = "12,2";
+	public static final String UGEI03_FORMA_PAGO_ITEM = "3";
+	public static final String UGEI03_PAGO_FORMA_PAGO = "2";
+	public static final String UGEI03_PAGO_TOTAL = "12,2";
+	public static final String UGEI03_PAGO_PLAZO = "3";
+	public static final String UGEI03_PAGO_UNIDAD_T = "5";
+	public static final String UGEI03_FILLER_IMPUESTO_LIQUIDACION_COMPRAS = "202";
+	
+	// --------------------------------------------------------------------------------------------------------------------
+	// REDEFICION DEL DETALLE DE LIQUIDACION DE COMPRAS ELECTRONICAS (inicio, cantidad de caracteres)
+	// --------------------------------------------------------------------------------------------------------------------
+	public static final String UGED03_TIPO_REGISTRO = "1";
+	public static final String UGED03_COD_DOC = "2";
+	public static final String UGED03_ESTAB = "3";
+	public static final String UGED03_PTO_EMISION = "3";
+	public static final String UGED03_SECUENCIAL = "9";
+	public static final String UGED03_CODIGO_PRINCIPAL = "8";
+	public static final String UGED03_CODIGO_AUX = "2";
+	public static final String UGED03_DESCRIPCION = "65";
+	public static final String UGED03_CANTIDAD = "7,2";
+	public static final String UGED03_PRECIO_UNITARIO = "12,2";
+	public static final String UGED03_DESCUENTO = "12,2";
+	public static final String UGED03_PRECIO_TOTAL_SIN_IMP = "12,2";
+	public static final String UGED03_IMP_DET_ITE = "5";
+	public static final String UGED03_IMP_CODIGO = "1";
+	public static final String UGED03_IMP_CODIGO_PORCENTAJE = "5";
+	public static final String UGED03_IMP_TARIFA = "9,2";
+	public static final String UGED03_IMP_BASE_IMPONIBLE = "12,2";
+	public static final String UGED03_IMP_VALOR = "12,2";
+	public static final String UGED03_FILLER_DETALLE_LIQUIDACION_COMPRAS = "139";
+	
+	// --------------------------------------------------------------------------------------------------------------------
+	// REDEFICION DE REEMBOLSO DE LIQUIDACION DE COMPRAS ELECTRONICAS (inicio, cantidad de caracteres)
+	// --------------------------------------------------------------------------------------------------------------------
+	public static final String UGED03_REEMBOLSO_TIPO_REGISTRO = "1";
+	public static final String UGED03_REEMBOLSO_CODIGO_DOCUMENTO = "2";
+	public static final String UGED03_REEMBOLSO_ESTABLECIMIENTO = "3";
+	public static final String UGED03_REEMBOLSO_PUNTO_EMISION = "3";
+	public static final String UGED03_REEMBOLSO_SECUENCIAL = "9";
+	public static final String UGED03_REEMBOLSO_TIPO_IDENTIFICACION_PROVEEDOR = "2";
+	public static final String UGED03_REEMBOLSO_IDENTIFICACION_PROVEEDOR = "13";
+	public static final String UGED03_REEMBOLSO_CODIGO_PAIS_PAGO_PROVEEDOR = "3";
+	public static final String UGED03_REEMBOLSO_TIPO_PROVEEDOR_REEMBOLSO = "2";
+	public static final String UGED03_REEMBOLSO_CODIGO_DOCUMENTO_REEMBOLSO = "3";
+	public static final String UGED03_REEMBOLSO_ESTABLECIMIENTO_DOCUMENTO = "3";
+	public static final String UGED03_REEMBOLSO_PUNTO_EMISION_DOCUMENTO = "3";
+	public static final String UGED03_REEMBOLSO_SECUENCIAL_DOCUMENTO= "0";
+	public static final String UGED03_REEMBOLSO_FECHA_EMISION_DOCUMENTO = "8";
+	public static final String UGED03_REEMBOLSO_NUMERO_AUTORIZACION_DOCUMENTO= "50";
+	public static final String UGED03_REEMBOLSO_IMPUESTO_ITEM = "5";
+	public static final String UGED03_REEMBOLSO_IMP_CODIGO = "1";
+	public static final String UGED03_REEMBOLSO_IMP_CODIGO_PORCENTAJE = "5";
+	public static final String UGED03_REEMBOLSO_IMP_TARIFA = "9,2";
+	public static final String UGED03_REEMBOLSO_IMP_BASE_IMPONIBLE = "12,2";
+	public static final String UGED03_REEMBOLSO_IMP_REEMBOLSO = "12,2";
+	public static final String UGED03_REEMBOLSO_FILLER_LIQUIDACION_COMPRAS = "139";
+	
+	// --------------------------------------------------------------------------------------------------------------------
+	// REDEFICION INFORMACION ADICIONAL DE LIQUIDACION DE COMPRAS
+	// --------------------------------------------------------------------------------------------------------------------
+	public static final String UGEA03_INFORMACION_ADICIONAL_TIPO_REGISTRO = "1";
+	public static final String UGEA03_INFORMACION_ADICIONAL_CODIGO_DOCUMENTO = "2";
+	public static final String UGEA03_INFORMACION_ADICIONAL_ESTABLECIMIENTO = "3";
+	public static final String UGEA03_INFORMACION_ADICIONAL_PUNTO_EMISION = "3";
+	public static final String UGEA03_INFORMACION_ADICIONAL_SECUENCIAL = "9";
+	public static final String UGEA03_INFORMACION_ADICIONAL_INFO_ADICIONAL_1 = "100";
+	public static final String UGEA03_INFORMACION_ADICIONAL_INFO_ADICIONAL_2 = "100";
+	public static final String FILLER_INFORMACION_ADICIONAL_LIQUIDACION_COMPRAS = "182";
 
 }

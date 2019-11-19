@@ -4,232 +4,339 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import ec.com.kruger.bean.factura.Adicional;
-import ec.com.kruger.bean.factura.Detalle;
 import ec.com.kruger.bean.factura.Impuesto;
-import ec.com.kruger.bean.factura.Retencion;
 import ec.com.kruger.bean.factura.formaPago.FormaPago;
 import ec.com.kruger.bean.liquidacion.compras.CabeceraLiquidacionCompras;
+import ec.com.kruger.bean.liquidacion.compras.DetalleLiquidacionCompras;
+import ec.com.kruger.bean.liquidacion.compras.ImpuestoDetalleLiquidacionCompras;
+import ec.com.kruger.bean.liquidacion.compras.ImpuestoLiquidacionCompras;
+import ec.com.kruger.bean.liquidacion.compras.ImpuestoReembolso;
+import ec.com.kruger.bean.liquidacion.compras.InformacionAdicionalLiquidacionCompras;
+import ec.com.kruger.bean.liquidacion.compras.ReembolsoLiquidacionCompras;
 import ec.com.kruger.util.DocumentTransformUtil;
 import ec.com.kruger.util.LineProperty;
 
 public class LiquidacionComprasBuildUtil implements DocumentTransformUtil, Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	public static CabeceraLiquidacionCompras getCabeceraLiquidacionCompras(String pLine) {
 		CabeceraLiquidacionCompras cabecera = new CabeceraLiquidacionCompras();
-		
-		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEC01_TIPO_REGISTRO);
+
+		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEC03_TIPO_REGISTRO);
 		cabecera.setTipoRegistro(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_COD_DOC);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_CODIGO_DOCUMENTO);
 		cabecera.setCodDoc(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_ESTAB);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_ESTABLECIMIENTO);
 		cabecera.setEstab(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_PTO_EMISION);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_PUNTO_EMISION);
 		cabecera.setPtoEmision(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_SECUENCIAL);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_SECUENCIAL);
 		cabecera.setSecuencial(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_FECHA_EMISION);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_FECHA_EMISION);
 		cabecera.setFechaEmision(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_HORA_EMISION);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_HORA_EMISION);
 		cabecera.setHoraEmision(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_DIR_ESTABLECIMIENTO);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_DIRECCION_ESTABLECIMIENTO);
 		cabecera.setDirEstablecimiento(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_TIPO_IDENTIF_COMPRADOR);
-		cabecera.setTipoIDentifComprador(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_RAZON_SOC_COMPRADOR);
-		cabecera.setRazonSocComprador(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_IDENTIF_COMPRADOR);
-		cabecera.setIdentifiComprador(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_TOTAL_SIN_IMPUESTO);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_TIPO_IDENTIFICACION_PROVEEDOR);
+		cabecera.setTipoIdentificacionProveedor(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_RAZON_SOCIAL_PROVEEDOR);
+		cabecera.setRazonSocialProveedor(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_IDENTIFICACION_PROVEEDOR);
+		cabecera.setIdentificacionProveedor(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_DIRECCION_PROVEEDOR);
+		cabecera.setDireccionProveedor(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_TOTAL_SIN_IMPUESTO);
 		cabecera.setTotalSinImpuesto(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_TOTAL_DESCUENTO);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_TOTAL_DESCUENTO);
 		cabecera.setTotalDescuento(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_PROPINA);
-		cabecera.setPropina(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_IMPORTE_TOTAL);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_CODIGO_DOCUMENTO_REEMBOLSO);
+		cabecera.setCodigoDocumentoReebolso(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_TOTAL_COMPROBANTE_REEMBOLSO);
+		cabecera.setTotalComprobanteReebolso(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_TOTAL_BASE_IMPONIBLE_REEMBOLSO);
+		cabecera.setTotalBaseImponibleReebolso(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_TOTAL_IMPUESTO_REEMBOLSO);
+		cabecera.setTotalImpuestoReembolso(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_IMPORTE_TOTAL);
 		cabecera.setImporteTotal(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_MONEDA);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_MONEDA);
 		cabecera.setMoneda(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_GUIA_REMISION);
-		cabecera.setGuiaRemision(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC05_VALOR_PAGAR);
-		cabecera.setValorPagar(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_NUM_GENERADO);
-		cabecera.setNumGenerado(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_FECHA_VIGENCIA);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_FECHA_VIGENCIA);
 		cabecera.setFechaVigencia(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_OFICINA_BG);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_OFICINA_BG);
 		cabecera.setOficinaBg(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_PORC_IVA);
-		cabecera.setPorcIva(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_CLAVE_ACCESO_BG);
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_PORCENTAJE_IVA);
+		cabecera.setPorcentajeIva(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC03_CLAVE_ACCESO);
 		cabecera.setClaveAcceso(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_DIR_COMPRADOR);
-		cabecera.setDirComprador(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_COMP_CODIGO);
-		cabecera.setCompCodigo(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_COMP_TARIFA);
-		cabecera.setCompTarifa(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC01_COMP_SOLIDARIA);
-		cabecera.setCompSolidaria(lineProperty.getValue());
-		
-		cabecera.setFillerCabFac(lineProperty.getNewLine().trim());
+
+		cabecera.setFillerCabeceraLiquidacionCompras(lineProperty.getNewLine().trim());
 
 		return cabecera;
 	}
 
-	public static Impuesto getImpuestosFactura(String pLine) {
-		Impuesto impuesto = new Impuesto();
-		
-		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEI01_TIPO_REGISTRO);
-		impuesto.setTipoRegistro(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_COD_DOC);
-		impuesto.setCodDoc(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_ESTAB);
-		impuesto.setEstab(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_PTO_EMISION);
-		impuesto.setPtoEmision(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_SECUENCIAL);
-		impuesto.setSecuencial(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_TOT_CODIGO);
-		impuesto.setTotCodigo(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_TOT_CODIGO_PORCENTAJE);
-		impuesto.setTotCodigoPorcentaje(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_TOT_BASE_IMPONIBLE);
-		impuesto.setTotBaseImponible(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_TOT_VALOR);
-		impuesto.setTotValor(lineProperty.getValue());
+	public static DetalleLiquidacionCompras getDetalleLiquidacionCompras(String pLine) {
+		DetalleLiquidacionCompras detalle = new DetalleLiquidacionCompras();
 
-		int iteradorImpuesto = Integer.valueOf(UGEI01_FORM_PAGO_ITE).intValue();
-		List<FormaPago> listaFormaPago = new ArrayList<FormaPago>();
+		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGED03_TIPO_REGISTRO);
+		detalle.setTipoRegistro(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_COD_DOC);
+		detalle.setCodigoDoc(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_ESTAB);
+		detalle.setEstab(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_PTO_EMISION);
+		detalle.setPtoEmision(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_SECUENCIAL);
+		detalle.setSecuencial(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_CODIGO_PRINCIPAL);
+		detalle.setCodigoPrincipal(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_CODIGO_AUX);
+		detalle.setCodigoAuxiliar(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_DESCRIPCION);
+		detalle.setDescripcion(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_CANTIDAD);
+		detalle.setCantidad(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_PRECIO_UNITARIO);
+		detalle.setPrecioUnitario(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_DESCUENTO);
+		detalle.setDescuento(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_PRECIO_TOTAL_SIN_IMP);
+		detalle.setPrecioTotalSinImp(lineProperty.getValue());
+
+		int impuestoIterator = Integer.valueOf(UGED03_IMP_DET_ITE).intValue();
+		List<ImpuestoDetalleLiquidacionCompras> impuestos = new ArrayList<ImpuestoDetalleLiquidacionCompras>();
+
+		for (int i = 0; i < impuestoIterator; i++) {
+			ImpuestoDetalleLiquidacionCompras impuesto = new ImpuestoDetalleLiquidacionCompras();
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_IMP_CODIGO);
+			impuesto.setCodigo(lineProperty.getValue());
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_IMP_CODIGO_PORCENTAJE);
+			impuesto.setCodigoPorcentaje(lineProperty.getValue());
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_IMP_TARIFA);
+			impuesto.setTarifa(lineProperty.getValue());
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_IMP_BASE_IMPONIBLE);
+			impuesto.setBaseImponible(lineProperty.getValue());
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_IMP_VALOR);
+			impuesto.setValor(lineProperty.getValue());
+
+			impuestos.add(impuesto);
+		}
+
+		detalle.setImpuestoDetalle(impuestos);
+		detalle.setFillerDetalleLiquidacionCompras(lineProperty.getNewLine().trim());
+
+		return detalle;
+	}
+
+	public static ImpuestoLiquidacionCompras getImpuestoLiquidacionCompras(String pLine) {
+		ImpuestoLiquidacionCompras impuesto = new ImpuestoLiquidacionCompras();
+
+		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEI03_TIPO_REGISTRO);
+		impuesto.setTipoRegistro(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_CODIGO_DOCUMENTO);
+		impuesto.setCodigoDocumento(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_ESTABLECIMIENTO);
+		impuesto.setEstablecimiento(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_PUNTO_EMISION);
+		impuesto.setPuntoEmision(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_SECUENCIAL);
+		impuesto.setSecuencial(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_TOTAL_CODIGO);
+		impuesto.setTotalCodigo(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_TOTAL_CODIGO_PORCENTAJE);
+		impuesto.setTotalCodigoPorcentaje(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_TOTAL_DESCUENTO_ADICIONAL);
+		impuesto.setTotalDescuentoAdicional(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_TOTAL_BASE_IMPONIBLE);
+		impuesto.setTotalBaseImponible(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_TOTAL_TARIFA);
+		impuesto.setTotalTarifa(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_TOTAL_VALOR);
+		impuesto.setTotalValor(lineProperty.getValue());
+
+		int iteradorImpuesto = Integer.valueOf(UGEI03_FORMA_PAGO_ITEM).intValue();
+		List<FormaPago> formasPago = new ArrayList<FormaPago>();
 
 		for (int i = 0; i < iteradorImpuesto; i++) {
 			FormaPago formaPago = new FormaPago();
-			
-			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_PAG_FORM_PAGO);
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_PAGO_FORMA_PAGO);
 			formaPago.setPagFormPago(lineProperty.getValue());
-			
-			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_PAG_TOTAL);
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_PAGO_TOTAL);
 			formaPago.setPagTotal(lineProperty.getValue());
-			
-			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_PAG_PLAZO);
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_PAGO_PLAZO);
 			formaPago.setPagPlazo(lineProperty.getValue());
-			
-			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI01_PAG_UNIDAD_T);
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI03_PAGO_UNIDAD_T);
 			formaPago.setPagUnidadT(lineProperty.getValue());
-			
-			listaFormaPago.add(formaPago);
+
+			formasPago.add(formaPago);
 		}
 
-		impuesto.setFormaPago(listaFormaPago);
-		impuesto.setFillerImpFac(lineProperty.getNewLine().trim());
+		impuesto.setFormasPago(formasPago);
+		impuesto.setFiller(lineProperty.getNewLine().trim());
 
 		return impuesto;
 	}
 
-	public static Detalle getDetalleFactura(String pLine) {
-		Detalle detalle = new Detalle();
-		
-		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGED01_TIPO_REGISTRO);
-		detalle.setTipoRegistro(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_COD_DOC);
-		detalle.setCodigoDoc(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_ESTAB);
-		detalle.setEstab(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_PTO_EMISION);
-		detalle.setPtoEmision(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_SECUENCIAL);
-		detalle.setSecuencial(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_CODIGO_PRINCIPAL);
-		detalle.setCodigoPrincipal(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_CODIGO_AUX);
-		detalle.setCodigoAuxiliar(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_DESCRIPCION);
-		detalle.setDescripcion(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_CANTIDAD);
-		detalle.setCantidad(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_PRECIO_UNITARIO);
-		detalle.setPrecioUnitario(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_DESCUENTO);
-		detalle.setDescuento(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_PRECIO_TOTAL_SIN_IMP);
-		detalle.setPrecioTotalSinImp(lineProperty.getValue());
+	public static ReembolsoLiquidacionCompras getReembolsoLiquidacionCompras(String pLine) {
+		ReembolsoLiquidacionCompras reembolso = new ReembolsoLiquidacionCompras();
 
-		int impuestoIterator = Integer.valueOf(UGED01_IMP_DET_ITE).intValue();
-		List<Impuesto> listaImpuesto = new ArrayList<Impuesto>();
+		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGED03_REEMBOLSO_TIPO_REGISTRO);
+		reembolso.setTipoRegistro(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_CODIGO_DOCUMENTO);
+		reembolso.setCodigoDocumento(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_ESTABLECIMIENTO);
+		reembolso.setEstablecimiento(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_PUNTO_EMISION);
+		reembolso.setPuntoEmision(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_SECUENCIAL);
+		reembolso.setSecuencial(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_TIPO_IDENTIFICACION_PROVEEDOR);
+		reembolso.setTipoIdentificacionProveedor(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_IDENTIFICACION_PROVEEDOR);
+		reembolso.setIdentificacionProveedor(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_CODIGO_PAIS_PAGO_PROVEEDOR);
+		reembolso.setCodigoPaisPagoProveedor(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_TIPO_PROVEEDOR_REEMBOLSO);
+		reembolso.setTipoProveedoReembolsor(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_CODIGO_DOCUMENTO_REEMBOLSO);
+		reembolso.setCodigoDocumentoReembolso(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_ESTABLECIMIENTO_DOCUMENTO);
+		reembolso.setEstablecimientoDocumentoReembolso(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_PUNTO_EMISION_DOCUMENTO);
+		reembolso.setPuntoEmisionDocumentoReembolso(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_SECUENCIAL_DOCUMENTO);
+		reembolso.setSecuencialDocumentoReembolso(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_FECHA_EMISION_DOCUMENTO);
+		reembolso.setFechaEmisionDocumentoReembolso(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_NUMERO_AUTORIZACION_DOCUMENTO);
+		reembolso.setNumeroAutorizacionDocumentoReembolso(lineProperty.getValue());
+
+		int impuestoIterator = Integer.valueOf(UGED03_REEMBOLSO_IMPUESTO_ITEM).intValue();
+		List<ImpuestoReembolso> listaImpuesto = new ArrayList<ImpuestoReembolso>();
 
 		for (int i = 0; i < impuestoIterator; i++) {
-			Impuesto impuesto = new Impuesto();
-			
-			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_IMP_CODIGO);
-			impuesto.setTotCodigo(lineProperty.getValue());
-			
-			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_IMP_CODIGO_PORCENTAJE);
-			impuesto.setTotCodigoPorcentaje(lineProperty.getValue());
-			
-			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_IMP_TARIFA);
+			ImpuestoReembolso impuesto = new ImpuestoReembolso();
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_IMP_CODIGO);
+			impuesto.setCodigo(lineProperty.getValue());
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_IMP_CODIGO_PORCENTAJE);
+			impuesto.setCodigoPorcentaje(lineProperty.getValue());
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_IMP_TARIFA);
 			impuesto.setTarifa(lineProperty.getValue());
-			
-			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_IMP_BASE_IMPONIBLE);
-			impuesto.setTotBaseImponible(lineProperty.getValue());
-			
-			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED01_IMP_VALOR);
-			impuesto.setTotValor(lineProperty.getValue());
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_IMP_BASE_IMPONIBLE);
+			impuesto.setBaseImponible(lineProperty.getValue());
+
+			lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGED03_REEMBOLSO_IMP_REEMBOLSO);
+			impuesto.setImpuestoReembolso(lineProperty.getValue());
 
 			listaImpuesto.add(impuesto);
 		}
 
-		detalle.setImpuestoDetalle(listaImpuesto);
-		detalle.setFillerDetFac(lineProperty.getNewLine().trim());
+		reembolso.setImpuestosReembolso(listaImpuesto);
+		reembolso.setFillerDetalleLiquidacionCompras(lineProperty.getNewLine().trim());
 
-		return detalle;
+		return reembolso;
+	}
+
+	public static InformacionAdicionalLiquidacionCompras getInformacionAdicionalLiquidacionCompras(String pLine) {
+		InformacionAdicionalLiquidacionCompras informacionAdicional = new InformacionAdicionalLiquidacionCompras();
+
+		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEA03_INFORMACION_ADICIONAL_TIPO_REGISTRO);
+		informacionAdicional.setTipoRegistro(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA03_INFORMACION_ADICIONAL_CODIGO_DOCUMENTO);
+		informacionAdicional.setCodDoc(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA03_INFORMACION_ADICIONAL_ESTABLECIMIENTO);
+		informacionAdicional.setEstab(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA03_INFORMACION_ADICIONAL_PUNTO_EMISION);
+		informacionAdicional.setPtoEmision(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA03_INFORMACION_ADICIONAL_SECUENCIAL);
+		informacionAdicional.setSecuencial(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA03_INFORMACION_ADICIONAL_INFO_ADICIONAL_1);
+		informacionAdicional.setInfoAdicional1(lineProperty.getValue());
+
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA03_INFORMACION_ADICIONAL_INFO_ADICIONAL_2);
+		informacionAdicional.setInfoAdicional2(lineProperty.getValue());
+
+		informacionAdicional.setFiller(lineProperty.getNewLine().trim());
+
+		return informacionAdicional;
 	}
 
 	public static List<FormaPago> getFormasPago(String formaPago, String pagTotal, String pagPlazo, String pagUnidad) {
@@ -247,7 +354,7 @@ public class LiquidacionComprasBuildUtil implements DocumentTransformUtil, Seria
 			formaPagoObj.setPagTotal(pagTotalArray[i]);
 			listaFormaPag.add(formaPagoObj);
 		}
-		
+
 		return listaFormaPag;
 	}
 
@@ -258,7 +365,7 @@ public class LiquidacionComprasBuildUtil implements DocumentTransformUtil, Seria
 		String[] tarifaArray = tarifa.split(CARACTER_SEPARADOR_ITERADOR);
 		String[] impValorArray = impValor.split(CARACTER_SEPARADOR_ITERADOR);
 		List<Impuesto> listaImpuesto = new ArrayList<Impuesto>();
-		
+
 		for (int i = 0; i < impCodigoArray.length; i++) {
 			Impuesto impuestoObj = new Impuesto();
 			impuestoObj.setTotCodigo(impCodigoArray[i]);
@@ -270,68 +377,6 @@ public class LiquidacionComprasBuildUtil implements DocumentTransformUtil, Seria
 		}
 
 		return null;
-	}
-
-	public static Retencion getRetencionFactura(String pLine) {
-		Retencion retencion = new Retencion();
-		
-		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGER01_TIPO_REGISTRO);
-		retencion.setTipoRegistro(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGER01_COD_DOC);
-		retencion.setCodDoc(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGER01_ESTAB);
-		retencion.setEstab(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGER01_PTO_EMISION);
-		retencion.setPtoEmision(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGER01_SECUENCIAL);
-		retencion.setSecuencial(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGER01_CODIGO);
-		retencion.setCodigo(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGER01_CODIGO_PORCENTAJE);
-		retencion.setCodigoPorcentaje(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGER01_TARIFA);
-		retencion.setTarifa(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGER01_VALOR);
-		retencion.setValor(lineProperty.getValue());
-
-		return retencion;
-	}
-
-	public static Adicional getAdicionalFactura(String pLine) {
-		Adicional adicional = new Adicional();
-		
-		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEA01_TIPO_REGISTRO);
-		adicional.setTipoRegistro(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA01_COD_DOC);
-		adicional.setCodDoc(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA01_ESTAB);
-		adicional.setEstab(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA01_PTO_EMISION);
-		adicional.setPtoEmision(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA01_SECUENCIAL);
-		adicional.setSecuencial(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA01_INFO_ADICIONAL_1);
-		adicional.setInfoAdicional1(lineProperty.getValue());
-		
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA01_INFO_ADICIONAL_2);
-		adicional.setInfoAdicional2(lineProperty.getValue());
-		
-		adicional.setFillerAdFac(lineProperty.getNewLine().trim());
-
-		return adicional;
 	}
 
 }
