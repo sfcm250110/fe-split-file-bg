@@ -446,7 +446,7 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGED03_REEMBOLSO_CODIGO_DOCUMENTO_REEMBOLSO = "3";
 	public static final String UGED03_REEMBOLSO_ESTABLECIMIENTO_DOCUMENTO = "3";
 	public static final String UGED03_REEMBOLSO_PUNTO_EMISION_DOCUMENTO = "3";
-	public static final String UGED03_REEMBOLSO_SECUENCIAL_DOCUMENTO= "0";
+	public static final String UGED03_REEMBOLSO_SECUENCIAL_DOCUMENTO= "9";
 	public static final String UGED03_REEMBOLSO_FECHA_EMISION_DOCUMENTO = "8";
 	public static final String UGED03_REEMBOLSO_NUMERO_AUTORIZACION_DOCUMENTO= "50";
 	public static final String UGED03_REEMBOLSO_IMPUESTO_ITEM = "5";
