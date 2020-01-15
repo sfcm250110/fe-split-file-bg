@@ -27,10 +27,11 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 	public static final String PATH_FILE_RETENCIONES_CA_FUSE_OK = "C:\\proyectos\\bg\\desarrollo\\clave-acceso-genera-fuse\\files-gl\\RETENCIONES_TC_02_20180831.txt";
 	public static final String PATH_FILE_RETENCIONES_CA_FUSE_ERROR = "C:\\proyectos\\bg\\desarrollo\\clave-acceso-genera-fuse\\files-gl\\SF2420_20_020_20180831_232415.txt";
 	public static final String PATH_FILE_RETENCIONES_V2_ATS = "C:\\Users\\kruger\\Desktop\\bg\\requerimientos\\retenciones-v2-ats\\xml-bg-borrador\\SF2420_02_003_20190624_094820.txt";
+	public static final String PATH_FILE_LIQUIDACION_COMPRAS = "C:\\proyectos\\bg\\files-bg\\SF2425_03_002_20200106_083838.txt";
 	
 	public static void main(String[] args) throws Exception {
 		try {
-			int metodoTest = 2;
+			int metodoTest = 4;
 			
 			switch (metodoTest) {
 				case 1: {
@@ -43,6 +44,10 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 				}
 				case 3: {
 					comprobanteRetencionCaFuseTest();
+					break;
+				}
+				case 4: {
+					liquidacionComprasTest();
 					break;
 				}
 			}
@@ -130,6 +135,17 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 					System.out.println(adicionalR);
 				}
 			}
+		}
+
+		in.close();
+	}
+	
+	public static void liquidacionComprasTest() throws Exception {
+		String line = null;
+		BufferedReader in = new BufferedReader(new FileReader(PATH_FILE_LIQUIDACION_COMPRAS));
+
+		while ((line = in.readLine()) != null && !"".equals(line)) {
+			System.out.println(obtenerLiquidacionCompras(line));
 		}
 
 		in.close();
