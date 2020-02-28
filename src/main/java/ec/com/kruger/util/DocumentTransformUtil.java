@@ -43,6 +43,7 @@ public abstract interface DocumentTransformUtil {
 	public static final String TIPO_LINEA_ADICIONAL = "A";
 	public static final String TIPO_LINEA_MOTIVO = "M";
 	public static final String TIPO_LINEA_REEMBOLSO = "R";
+	public static final String TIPO_LINEA_IMPUESTOS = "IS";
 
 	// --------------------------------------------------------------------------------------------------------------------
 	// DEFINICION DE CABECERA DE FACTURAS ELECTRONICAS
@@ -468,5 +469,79 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGEA03_INFORMACION_ADICIONAL_INFO_ADICIONAL_1 = "100";
 	public static final String UGEA03_INFORMACION_ADICIONAL_INFO_ADICIONAL_2 = "100";
 	public static final String FILLER_INFORMACION_ADICIONAL_LIQUIDACION_COMPRAS = "182";
+	
+	// --------------------------------------------------------------------------------------------------------------------
+	// DEFINICION DE CABECERA DE COMPROBANTE DE RETENCION V2
+	// --------------------------------------------------------------------------------------------------------------------
+	public static final String UGEC07_V2_TIPO_REGISTRO = "1";
+	public static final String UGEC07_V2_CODIGO_DOCUMENTO = "2";
+	public static final String UGEC07_V2_ESTABLECIMIENTO = "3";
+	public static final String UGEC07_V2_PUNTO_EMISION = "3";
+	public static final String UGEC07_V2_SECUENCIAL = "9";
+	public static final String UGEC07_V2_FECHA_EMISION = "8";
+	public static final String UGEC07_V2_HORA_EMISION = "6";
+	public static final String UGEC07_V2_DIRECCION_ESTABLECIMIENTO = "60";
+	public static final String UGEC07_V2_TIPO_IDENTIFICACION_RETENIDO = "2";
+	public static final String UGEC07_V2_RAZON_SOCIAL_RETENIDO = "80";
+	public static final String UGEC07_V2_IDENTIFICACION_RETENIDO = "13";
+	public static final String UGEC07_V2_PERIODO_FISCAL = "6";
+	public static final String UGEC07_V2_NUMERO_GENERADO = "8";
+	public static final String UGEC07_V2_FECHA_VIGENCIA = "8";
+	public static final String UGEC07_V2_OFICINA_BG = "3";
+	public static final String UGEC07_V2_SECUENCIAL_BG = "9";
+	public static final String UGEC07_V2_PORCENTAJE_IVA = "3";
+	public static final String UGEC07_V2_CLAVE_ACCESO_BG = "50";
+	public static final String UGEC07_V2_PARTE_RELACIONADA = "2";
+	public static final String UGEC07_V2_FORMA_PAGO = "2";
+	public static final String UGEC07_V2_TOTAL_PAGO = "11";
+	public static final String UGEC07_V2_FILLER_CABECERA_COMPROBANTE_RETENCION = "79";
+	
+	// --------------------------------------------------------------------------------------------------------------------
+	// DEFINICION DE DOCUMENTO SUSTENTO DE COMPROBANTE DE RETENCION V2
+	// --------------------------------------------------------------------------------------------------------------------
+	public static final String UGEC07_V2_CODIGO_SUSTENTO = "2";
+	public static final String UGEC07_V2_CODIGO_DOCUMENTO_SUSTENTO = "2";
+	public static final String UGEC07_V2_NUMERO_DOCUMENTO_SUSTENTO = "20";
+	public static final String UGEC07_V2_FECHA_EMISION_DOCUMENTO_SUSTENTO = "8";
+	public static final String UGEC07_V2_FECHA_REGISTRO_CONTABLE = "8";
+	public static final String UGEC07_V2_NUMERO_AUTORIZACION_DOCUMENTO_SUSTENTO = "50";
+	public static final String UGEC07_V2_PAGO_LOCAL_EXTERIOR = "2";
+	public static final String UGEC07_V2_TOTAL_SIN_IMPUESTO = "11";
+	public static final String UGEC07_V2_IMPORTE_TOTAL = "11";
+	public static final String UGEC07_V2_TOTAL_COMPROBANTE_REEMBOLSO = "11";
+	public static final String UGEC07_V2_TOTAL_BASE_IMPUESTO_REEMBOLSO = "11";
+	public static final String UGEC07_V2_TOTAL_IMPUESTO_REEMBOLSO = "11";
+	public static final String UGEC07_V2_TIPO_REGIMEN = "2";
+	public static final String UGEC07_V2_PAIS_EFECTIVO_PAGO = "3";
+	public static final String UGEC07_V2_APLICA_CONVENIO_DOBLE_TRIB = "2";
+	public static final String UGEC07_V2_PAG_EXT_SUJ_RET_NOM_LEG = "2";
+	public static final String UGEC07_V2_PAGO_REG_FIS = "2";
+	
+	// --------------------------------------------------------------------------------------------------------------------
+	// DEFINICION DE IMPUESTO DE COMPROBANTE DE RETENCION V2
+	// --------------------------------------------------------------------------------------------------------------------
+	public static final String UGEC07_V2_CODIGO = "1";
+	public static final String UGEC07_V2_CODIGO_RETENCION = "5";
+	public static final String UGEC07_V2_BASE_RETENCION = "10";
+	public static final String UGEC07_V2_PORCENTAJE_RETENER = "3";
+	public static final String UGEC07_V2_VALOR_RETENIDO = "10";
+	public static final String UGEC07_V2_FECHA_PAGO_DIV = "8";
+	public static final String UGEC07_V2_IMPUESTO_RENTA_SOC = "11";
+	public static final String UGEC07_V2_EJERCICIO_FISCAL_ULT_DIV = "4";
+	
+	// --------------------------------------------------------------------------------------------------------------------
+	// DEFINICION DE IMPUESTOS DE COMPROBANTE DE RETENCION V2
+	// --------------------------------------------------------------------------------------------------------------------
+	public static final String UGEC07_V2_CODIGO_DOCUMENTO_SUSTENTO_IMP = "1";
+	public static final String UGEC07_V2_CODIGO_PORCENTAJE = "5";
+	public static final String UGEC07_V2_BASE_IMPONIBLE = "11";
+	public static final String UGEC07_V2_TARIFA = "11";
+	public static final String UGEC07_V2_VALOR_IMPUESTO = "11";
+	
+	// --------------------------------------------------------------------------------------------------------------------
+	// DEFINICION DE INFORMACION ADICIONAL DE COMPROBANTE DE RETENCION V2
+	// --------------------------------------------------------------------------------------------------------------------
+	public static final String UGEA07_V2_INFORMACION_ADICIONAL_INFO_ADICIONAL_1 = "100";
+	public static final String UGEA07_V2_INFORMACION_ADICIONAL_INFO_ADICIONAL_2 = "100";
 
 }

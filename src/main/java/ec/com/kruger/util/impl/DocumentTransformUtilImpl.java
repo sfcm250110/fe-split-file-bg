@@ -33,6 +33,12 @@ import ec.com.kruger.bean.liquidacion.compras.ImpuestoLiquidacionCompras;
 import ec.com.kruger.bean.liquidacion.compras.InformacionAdicionalLiquidacionCompras;
 import ec.com.kruger.bean.liquidacion.compras.LiquidacionCompras;
 import ec.com.kruger.bean.liquidacion.compras.ReembolsoLiquidacionCompras;
+import ec.com.kruger.bean.retencion.v2.CabeceraComprobanteRetencion;
+import ec.com.kruger.bean.retencion.v2.ComprobanteRetencion;
+import ec.com.kruger.bean.retencion.v2.DocumentoSustentoComprobanteRetencion;
+import ec.com.kruger.bean.retencion.v2.ImpuestoComprobanteRetencion;
+import ec.com.kruger.bean.retencion.v2.ImpuestosComprobanteRetencion;
+import ec.com.kruger.bean.retencion.v2.InformacionAdicionalComprobanteRetencion;
 import ec.com.kruger.util.DocumentTransformUtil;
 import ec.com.kruger.util.LineProperty;
 
@@ -280,6 +286,55 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 		}
 
 		return liquidacionCompras;
+	}
+	
+	public static ComprobanteRetencion obtenerComprobanteRetencion(String pComprobanteRetencion) throws Exception {
+		CabeceraComprobanteRetencion cabecera = new CabeceraComprobanteRetencion();
+		List<DocumentoSustentoComprobanteRetencion> documentoSustento = new ArrayList<DocumentoSustentoComprobanteRetencion>();
+		List<ImpuestoComprobanteRetencion> impuestoLista = new ArrayList<ImpuestoComprobanteRetencion>();
+		List<ImpuestosComprobanteRetencion> impuestosLista = new ArrayList<ImpuestosComprobanteRetencion>();
+		List<InformacionAdicionalComprobanteRetencion> informacionesAdicional = new ArrayList<InformacionAdicionalComprobanteRetencion>();
+
+		List<String> lineas = Arrays.asList(pComprobanteRetencion.split(BREAL_LINE));
+		String tipoLinea = EMPTY;
+
+		for (String linea : lineas) {
+			tipoLinea = DocumentTransformUtilImpl.getTipoLinea(linea);
+
+			if (tipoLinea.equals(TIPO_LINEA_CABECERA_COMPROBANTE)) {
+				cabecera = ComprobanteRetencionBuildUtil.getCabeceraComprobanteRetencion(linea);
+
+			} else if (tipoLinea.equals(TIPO_LINEA_IMP)) {
+				ImpuestoComprobanteRetencion impuesto = ComprobanteRetencionBuildUtil.getImpuestoComprobanteRetencion(linea);
+				impuestoLista.add(impuesto);
+
+			} else if (tipoLinea.equals(TIPO_LINEA_DET)) {
+				DocumentoSustentoComprobanteRetencion detalle = ComprobanteRetencionBuildUtil.getDocumentoSustentoComprobanteRetencion(linea);
+				documentoSustento.add(detalle);
+
+			} else if (tipoLinea.equals(TIPO_LINEA_RET)) {
+				ImpuestosComprobanteRetencion impuestos = ComprobanteRetencionBuildUtil.getImpuestosComprobanteRetencion(linea);
+				impuestosLista.add(impuestos);
+
+			} else if (tipoLinea.equals((TIPO_LINEA_ADICIONAL))) {
+				InformacionAdicionalComprobanteRetencion informacionAdicional = ComprobanteRetencionBuildUtil.getInformacionAdicionalComprobanteRetencion(linea);
+				informacionesAdicional.add(informacionAdicional);
+			}
+		}
+
+		ComprobanteRetencion comprobanteRetencion = new ComprobanteRetencion();
+		try {
+			comprobanteRetencion.setCabecera(cabecera);
+			comprobanteRetencion.setDocumentosSustento(documentoSustento);
+			comprobanteRetencion.setImpuestos(impuestoLista);
+			comprobanteRetencion.setImpuestosLista(impuestosLista);
+			comprobanteRetencion.setInformacionesAdicional(informacionesAdicional);
+
+		} catch (Exception e) {
+			log.log(Level.SEVERE, e.getMessage());
+		}
+
+		return comprobanteRetencion;
 	}
 
 	public static String getTipoDocumentoByLine(String pLineCabecera) {
