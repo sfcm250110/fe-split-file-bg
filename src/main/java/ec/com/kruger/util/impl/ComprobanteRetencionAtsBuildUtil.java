@@ -2,20 +2,20 @@ package ec.com.kruger.util.impl;
 
 import java.io.Serializable;
 
-import ec.com.kruger.bean.retencion.v2.CabeceraComprobanteRetencion;
-import ec.com.kruger.bean.retencion.v2.DocumentoSustentoComprobanteRetencion;
-import ec.com.kruger.bean.retencion.v2.ImpuestoComprobanteRetencion;
-import ec.com.kruger.bean.retencion.v2.ImpuestosComprobanteRetencion;
-import ec.com.kruger.bean.retencion.v2.InformacionAdicionalComprobanteRetencion;
+import ec.com.kruger.bean.retencion.ats.CabeceraComprobanteRetencionAts;
+import ec.com.kruger.bean.retencion.ats.DocumentoSustentoComprobanteRetencionAts;
+import ec.com.kruger.bean.retencion.ats.ImpuestoComprobanteRetencionAts;
+import ec.com.kruger.bean.retencion.ats.ImpuestosComprobanteRetencionAts;
+import ec.com.kruger.bean.retencion.ats.InformacionAdicionalComprobanteRetencionAts;
 import ec.com.kruger.util.DocumentTransformUtil;
 import ec.com.kruger.util.LineProperty;
 
-public class ComprobanteRetencionBuildUtil implements DocumentTransformUtil, Serializable {
+public class ComprobanteRetencionAtsBuildUtil implements DocumentTransformUtil, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public static CabeceraComprobanteRetencion getCabeceraComprobanteRetencion(String pLine) {
-		CabeceraComprobanteRetencion cabecera = new CabeceraComprobanteRetencion();
+	public static CabeceraComprobanteRetencionAts getCabeceraComprobanteRetencion(String pLine) {
+		CabeceraComprobanteRetencionAts cabecera = new CabeceraComprobanteRetencionAts();
 
 		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEC07_V2_TIPO_REGISTRO);
 		cabecera.setTipoRegistro(lineProperty.getValue());
@@ -85,8 +85,8 @@ public class ComprobanteRetencionBuildUtil implements DocumentTransformUtil, Ser
 		return cabecera;
 	}
 
-	public static DocumentoSustentoComprobanteRetencion getDocumentoSustentoComprobanteRetencion(String pLine) {
-		DocumentoSustentoComprobanteRetencion documentoSustento = new DocumentoSustentoComprobanteRetencion();
+	public static DocumentoSustentoComprobanteRetencionAts getDocumentoSustentoComprobanteRetencion(String pLine) {
+		DocumentoSustentoComprobanteRetencionAts documentoSustento = new DocumentoSustentoComprobanteRetencionAts();
 
 		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEC07_V2_TIPO_REGISTRO);
 		documentoSustento.setTipoRegistro(lineProperty.getValue());
@@ -157,8 +157,8 @@ public class ComprobanteRetencionBuildUtil implements DocumentTransformUtil, Ser
 		return documentoSustento;
 	}
 
-	public static ImpuestoComprobanteRetencion getImpuestoComprobanteRetencion(String pLine) {
-		ImpuestoComprobanteRetencion impuesto = new ImpuestoComprobanteRetencion();
+	public static ImpuestoComprobanteRetencionAts getImpuestoComprobanteRetencion(String pLine) {
+		ImpuestoComprobanteRetencionAts impuesto = new ImpuestoComprobanteRetencionAts();
 
 		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEC07_V2_TIPO_REGISTRO);
 		impuesto.setTipoRegistro(lineProperty.getValue());
@@ -204,8 +204,8 @@ public class ComprobanteRetencionBuildUtil implements DocumentTransformUtil, Ser
 		return impuesto;
 	}
 
-	public static ImpuestosComprobanteRetencion getImpuestosComprobanteRetencion(String pLine) {
-		ImpuestosComprobanteRetencion impuestos = new ImpuestosComprobanteRetencion();
+	public static ImpuestosComprobanteRetencionAts getImpuestosComprobanteRetencion(String pLine) {
+		ImpuestosComprobanteRetencionAts impuestos = new ImpuestosComprobanteRetencionAts();
 
 		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEC07_V2_TIPO_REGISTRO);
 		impuestos.setTipoRegistro(lineProperty.getValue());
@@ -242,8 +242,8 @@ public class ComprobanteRetencionBuildUtil implements DocumentTransformUtil, Ser
 		return impuestos;
 	}
 
-	public static InformacionAdicionalComprobanteRetencion getInformacionAdicionalComprobanteRetencion(String pLine) {
-		InformacionAdicionalComprobanteRetencion informacionAdicional = new InformacionAdicionalComprobanteRetencion();
+	public static InformacionAdicionalComprobanteRetencionAts getInformacionAdicionalComprobanteRetencion(String pLine) {
+		InformacionAdicionalComprobanteRetencionAts informacionAdicional = new InformacionAdicionalComprobanteRetencionAts();
 
 		LineProperty lineProperty = DocumentTransformUtilImpl.getLineProperty(pLine, UGEC07_V2_TIPO_REGISTRO);
 		informacionAdicional.setTipoRegistro(lineProperty.getValue());

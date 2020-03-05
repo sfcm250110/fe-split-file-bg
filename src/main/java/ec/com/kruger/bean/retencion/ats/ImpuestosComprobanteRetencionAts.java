@@ -1,8 +1,8 @@
-package ec.com.kruger.bean.retencion.v2;
+package ec.com.kruger.bean.retencion.ats;
 
 import java.io.Serializable;
 
-public class ImpuestosComprobanteRetencion implements Serializable {
+public class ImpuestosComprobanteRetencionAts implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

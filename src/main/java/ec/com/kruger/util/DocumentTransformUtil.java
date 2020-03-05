@@ -506,11 +506,11 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGEC07_V2_FECHA_REGISTRO_CONTABLE = "8";
 	public static final String UGEC07_V2_NUMERO_AUTORIZACION_DOCUMENTO_SUSTENTO = "50";
 	public static final String UGEC07_V2_PAGO_LOCAL_EXTERIOR = "2";
-	public static final String UGEC07_V2_TOTAL_SIN_IMPUESTO = "11";
-	public static final String UGEC07_V2_IMPORTE_TOTAL = "11";
-	public static final String UGEC07_V2_TOTAL_COMPROBANTE_REEMBOLSO = "11";
-	public static final String UGEC07_V2_TOTAL_BASE_IMPUESTO_REEMBOLSO = "11";
-	public static final String UGEC07_V2_TOTAL_IMPUESTO_REEMBOLSO = "11";
+	public static final String UGEC07_V2_TOTAL_SIN_IMPUESTO = "13,2";
+	public static final String UGEC07_V2_IMPORTE_TOTAL = "13,2";
+	public static final String UGEC07_V2_TOTAL_COMPROBANTE_REEMBOLSO = "11,2";
+	public static final String UGEC07_V2_TOTAL_BASE_IMPUESTO_REEMBOLSO = "11,2";
+	public static final String UGEC07_V2_TOTAL_IMPUESTO_REEMBOLSO = "11,2";
 	public static final String UGEC07_V2_TIPO_REGIMEN = "2";
 	public static final String UGEC07_V2_PAIS_EFECTIVO_PAGO = "3";
 	public static final String UGEC07_V2_APLICA_CONVENIO_DOBLE_TRIB = "2";

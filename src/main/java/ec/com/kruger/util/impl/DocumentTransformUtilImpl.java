@@ -33,12 +33,12 @@ import ec.com.kruger.bean.liquidacion.compras.ImpuestoLiquidacionCompras;
 import ec.com.kruger.bean.liquidacion.compras.InformacionAdicionalLiquidacionCompras;
 import ec.com.kruger.bean.liquidacion.compras.LiquidacionCompras;
 import ec.com.kruger.bean.liquidacion.compras.ReembolsoLiquidacionCompras;
-import ec.com.kruger.bean.retencion.v2.CabeceraComprobanteRetencion;
-import ec.com.kruger.bean.retencion.v2.ComprobanteRetencion;
-import ec.com.kruger.bean.retencion.v2.DocumentoSustentoComprobanteRetencion;
-import ec.com.kruger.bean.retencion.v2.ImpuestoComprobanteRetencion;
-import ec.com.kruger.bean.retencion.v2.ImpuestosComprobanteRetencion;
-import ec.com.kruger.bean.retencion.v2.InformacionAdicionalComprobanteRetencion;
+import ec.com.kruger.bean.retencion.ats.CabeceraComprobanteRetencionAts;
+import ec.com.kruger.bean.retencion.ats.ComprobanteRetencionAts;
+import ec.com.kruger.bean.retencion.ats.DocumentoSustentoComprobanteRetencionAts;
+import ec.com.kruger.bean.retencion.ats.ImpuestoComprobanteRetencionAts;
+import ec.com.kruger.bean.retencion.ats.ImpuestosComprobanteRetencionAts;
+import ec.com.kruger.bean.retencion.ats.InformacionAdicionalComprobanteRetencionAts;
 import ec.com.kruger.util.DocumentTransformUtil;
 import ec.com.kruger.util.LineProperty;
 
@@ -288,12 +288,12 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 		return liquidacionCompras;
 	}
 	
-	public static ComprobanteRetencion obtenerComprobanteRetencion(String pComprobanteRetencion) throws Exception {
-		CabeceraComprobanteRetencion cabecera = new CabeceraComprobanteRetencion();
-		List<DocumentoSustentoComprobanteRetencion> documentoSustento = new ArrayList<DocumentoSustentoComprobanteRetencion>();
-		List<ImpuestoComprobanteRetencion> impuestoLista = new ArrayList<ImpuestoComprobanteRetencion>();
-		List<ImpuestosComprobanteRetencion> impuestosLista = new ArrayList<ImpuestosComprobanteRetencion>();
-		List<InformacionAdicionalComprobanteRetencion> informacionesAdicional = new ArrayList<InformacionAdicionalComprobanteRetencion>();
+	public static ComprobanteRetencionAts obtenerComprobanteRetencionAts(String pComprobanteRetencion) throws Exception {
+		CabeceraComprobanteRetencionAts cabecera = new CabeceraComprobanteRetencionAts();
+		List<DocumentoSustentoComprobanteRetencionAts> documentoSustento = new ArrayList<DocumentoSustentoComprobanteRetencionAts>();
+		List<ImpuestoComprobanteRetencionAts> impuestoLista = new ArrayList<ImpuestoComprobanteRetencionAts>();
+		List<ImpuestosComprobanteRetencionAts> impuestosLista = new ArrayList<ImpuestosComprobanteRetencionAts>();
+		List<InformacionAdicionalComprobanteRetencionAts> informacionesAdicional = new ArrayList<InformacionAdicionalComprobanteRetencionAts>();
 
 		List<String> lineas = Arrays.asList(pComprobanteRetencion.split(BREAL_LINE));
 		String tipoLinea = EMPTY;
@@ -302,27 +302,27 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 			tipoLinea = DocumentTransformUtilImpl.getTipoLinea(linea);
 
 			if (tipoLinea.equals(TIPO_LINEA_CABECERA_COMPROBANTE)) {
-				cabecera = ComprobanteRetencionBuildUtil.getCabeceraComprobanteRetencion(linea);
+				cabecera = ComprobanteRetencionAtsBuildUtil.getCabeceraComprobanteRetencion(linea);
 
 			} else if (tipoLinea.equals(TIPO_LINEA_IMP)) {
-				ImpuestoComprobanteRetencion impuesto = ComprobanteRetencionBuildUtil.getImpuestoComprobanteRetencion(linea);
+				ImpuestoComprobanteRetencionAts impuesto = ComprobanteRetencionAtsBuildUtil.getImpuestoComprobanteRetencion(linea);
 				impuestoLista.add(impuesto);
 
 			} else if (tipoLinea.equals(TIPO_LINEA_DET)) {
-				DocumentoSustentoComprobanteRetencion detalle = ComprobanteRetencionBuildUtil.getDocumentoSustentoComprobanteRetencion(linea);
+				DocumentoSustentoComprobanteRetencionAts detalle = ComprobanteRetencionAtsBuildUtil.getDocumentoSustentoComprobanteRetencion(linea);
 				documentoSustento.add(detalle);
 
 			} else if (tipoLinea.equals(TIPO_LINEA_RET)) {
-				ImpuestosComprobanteRetencion impuestos = ComprobanteRetencionBuildUtil.getImpuestosComprobanteRetencion(linea);
+				ImpuestosComprobanteRetencionAts impuestos = ComprobanteRetencionAtsBuildUtil.getImpuestosComprobanteRetencion(linea);
 				impuestosLista.add(impuestos);
 
 			} else if (tipoLinea.equals((TIPO_LINEA_ADICIONAL))) {
-				InformacionAdicionalComprobanteRetencion informacionAdicional = ComprobanteRetencionBuildUtil.getInformacionAdicionalComprobanteRetencion(linea);
+				InformacionAdicionalComprobanteRetencionAts informacionAdicional = ComprobanteRetencionAtsBuildUtil.getInformacionAdicionalComprobanteRetencion(linea);
 				informacionesAdicional.add(informacionAdicional);
 			}
 		}
 
-		ComprobanteRetencion comprobanteRetencion = new ComprobanteRetencion();
+		ComprobanteRetencionAts comprobanteRetencion = new ComprobanteRetencionAts();
 		try {
 			comprobanteRetencion.setCabecera(cabecera);
 			comprobanteRetencion.setDocumentosSustento(documentoSustento);
