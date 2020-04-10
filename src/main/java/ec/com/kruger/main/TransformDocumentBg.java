@@ -10,7 +10,7 @@ import ec.com.kruger.bean.factura.notacredito.NotaCreditoNC;
 import ec.com.kruger.bean.factura.retencion.AdicionalR;
 import ec.com.kruger.bean.factura.retencion.ImpuestoR;
 import ec.com.kruger.bean.principal.Cabecera;
-import ec.com.kruger.bean.retencion.v2.ComprobanteRetencion;
+import ec.com.kruger.bean.retencion.ats.ComprobanteRetencionAts;
 import ec.com.kruger.util.ContentFile;
 import ec.com.kruger.util.impl.CabeceraPrincipalBuildUtil;
 import ec.com.kruger.util.impl.DocumentTransformUtilImpl;
@@ -29,7 +29,7 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 	public static final String PATH_FILE_RETENCIONES_CA_FUSE_OK = "C:\\proyectos\\bg\\desarrollo\\clave-acceso-genera-fuse\\files-gl\\RETENCIONES_TC_02_20180831.txt";
 	public static final String PATH_FILE_RETENCIONES_CA_FUSE_ERROR = "C:\\proyectos\\bg\\desarrollo\\clave-acceso-genera-fuse\\files-gl\\SF2420_20_020_20180831_232415.txt";
 	public static final String PATH_FILE_RETENCIONES_ATS = "C:\\Users\\kruger\\Desktop\\bg\\requerimientos\\retenciones-v2-ats\\xml-bg-borrador\\SF2420_02_003_20190624_094820.txt";
-	public static final String PATH_FILE_RETENCIONES_V2 = "C:\\proyectos\\bg\\retenciones-v2\\SF2422_02_003_20200210_170229.txt";
+	public static final String PATH_FILE_RETENCIONES_ATS_V2 = "C:\\proyectos\\bg\\retenciones-v2\\archivos-xml-bg\\SF2422_11_010_20200323_140952.txt";
 	public static final String PATH_FILE_LIQUIDACION_COMPRAS = "C:\\proyectos\\bg\\files-bg\\SF2425_03_002_20200106_083838.txt";
 	
 	public static void main(String[] args) throws Exception {
@@ -54,7 +54,7 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 					break;
 				}
 				case 5: {
-					comprobanteRetencionV2Test();
+					comprobanteRetencionAtsTest();
 					break;
 				}
 			}
@@ -160,13 +160,13 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 		in.close();
 	}
 	
-	public static void comprobanteRetencionV2Test() throws Exception {
-		ContentFile contenidoArchivo = getContentFile(PATH_FILE_RETENCIONES_V2);
+	public static void comprobanteRetencionAtsTest() throws Exception {
+		ContentFile contenidoArchivo = getContentFile(PATH_FILE_RETENCIONES_ATS_V2);
 		Cabecera cabecera = CabeceraPrincipalBuildUtil.getCabeceraFile(contenidoArchivo.getLineaCabecera());
-		ComprobanteRetencion comprobanteRetencion = obtenerComprobanteRetencion(contenidoArchivo.getContenido());
+		ComprobanteRetencionAts comprobanteRetencion = obtenerComprobanteRetencionAts(contenidoArchivo.getContenido());
 		
-		System.out.println(cabecera);
 		System.out.println(comprobanteRetencion);
+		System.out.println(cabecera);
 	}
 	
 	private static ContentFile getContentFile(String pFilePath) throws Exception {
