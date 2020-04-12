@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 import java.util.Random;
 
 public class UtilidadesFE implements Serializable {
@@ -71,6 +72,19 @@ public class UtilidadesFE implements Serializable {
 		}
 
 		return fechaResult;
+	}
+	
+	public static String obtenerPorcentajeRetener(String pValor) {
+		String porcentajeRetener = pValor;
+		
+		if (Objects.nonNull(pValor) && !pValor.isEmpty()) {
+			if (Integer.parseInt(pValor) > 100) {
+				Double porcentajeRetenerDecimal = Double.parseDouble(pValor) / 100; 
+				porcentajeRetener = porcentajeRetenerDecimal.toString();
+			}
+		}
+		
+		return porcentajeRetener;
 	}
 
 }

@@ -185,7 +185,7 @@ public class ComprobanteRetencionAtsBuildUtil implements DocumentTransformUtil, 
 		impuesto.setBaseImponible(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_PORCENTAJE_RETENER);
-		impuesto.setPorcentajeRetener(lineProperty.getValue());
+		impuesto.setPorcentajeRetener(UtilidadesFE.obtenerPorcentajeRetener(lineProperty.getValue()));
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_VALOR_RETENIDO);
 		impuesto.setValorRetenido(lineProperty.getValue());

@@ -18,6 +18,7 @@ public class DocumentoSustentoComprobanteRetencionAts implements Serializable {
 	private String fechaRegistroContable;
 	private String numeroAutorizacionDocumentoSustento;
 	private String pagoLocalExterior;
+	private String tipoRegi;
 	private String totalSinImpuesto;
 	private String importeTotal;
 	private String totalComprobanteReembolso;
@@ -220,6 +221,14 @@ public class DocumentoSustentoComprobanteRetencionAts implements Serializable {
 				+ ", fechaEmisionDocumentoSustento=" + fechaEmisionDocumentoSustento + ", fechaRegistroContable=" + fechaRegistroContable + ", numeroAutorizacionDocumentoSustento=" + numeroAutorizacionDocumentoSustento + ", pagoLocalExterior=" + pagoLocalExterior + ", totalSinImpuesto=" + totalSinImpuesto + ", importeTotal=" + importeTotal + ", totalComprobanteReembolso="
 				+ totalComprobanteReembolso + ", totalBaseImponibleReembolso=" + totalBaseImponibleReembolso + ", totalImpuestoReembolso=" + totalImpuestoReembolso + ", tipoRegimen=" + tipoRegimen + ", paisEfectivoPago=" + paisEfectivoPago + ", aplicaConvenioDobleTrib=" + aplicaConvenioDobleTrib + ", pagoExtSujRetNomLeg=" + pagoExtSujRetNomLeg + ", pagoRegFis=" + pagoRegFis
 				+ ", fillerDocumentoSustentoComprobanteRetencion=" + fillerDocumentoSustentoComprobanteRetencion + "]";
+	}
+
+	public String getTipoRegi() {
+		return tipoRegi;
+	}
+
+	public void setTipoRegi(String tipoRegi) {
+		this.tipoRegi = tipoRegi;
 	}
 
 }
