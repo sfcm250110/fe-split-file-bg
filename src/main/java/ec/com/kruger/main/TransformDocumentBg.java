@@ -28,10 +28,11 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 	public static final String PATH_FILE_RETENCIONES_CA_FUSE_ERROR = "C:\\proyectos\\bg\\desarrollo\\clave-acceso-genera-fuse\\files-gl\\SF2420_20_020_20180831_232415.txt";
 	public static final String PATH_FILE_RETENCIONES_V2_ATS = "C:\\Users\\kruger\\Desktop\\bg\\requerimientos\\retenciones-v2-ats\\xml-bg-borrador\\SF2420_02_003_20190624_094820.txt";
 	public static final String PATH_FILE_LIQUIDACION_COMPRAS = "C:\\proyectos\\bg\\files-bg\\SF2425_03_002_20200106_083838.txt";
+	public static final String PATH_FILE_RETENCIONES_PORCENTAJE = "C:\\proyectos\\bg\\retenciones-porcentaje\\SF2420_07_007_20200403_213148.txt";
 	
 	public static void main(String[] args) throws Exception {
 		try {
-			int metodoTest = 4;
+			int metodoTest = 2;
 			
 			switch (metodoTest) {
 				case 1: {
@@ -90,7 +91,7 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 	
 	public static void comprobanteRetencionTest() throws Exception {
 		String line = null;
-		BufferedReader in = new BufferedReader(new FileReader(PATH_FILE_RETENCIONES_V2_ATS));
+		BufferedReader in = new BufferedReader(new FileReader(PATH_FILE_RETENCIONES_PORCENTAJE));
 
 		while ((line = in.readLine()) != null && !"".equals(line)) {
 			if (line.substring(0, 1).equals(TIPO_LINEA_CABECERA)) {

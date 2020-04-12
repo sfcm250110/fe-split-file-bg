@@ -1,6 +1,7 @@
 package ec.com.kruger.util.impl;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import ec.com.kruger.bean.factura.retencion.AdicionalR;
 import ec.com.kruger.bean.factura.retencion.CabeceraR;
@@ -102,7 +103,7 @@ public class RetencionBuildUtil implements DocumentTransformUtil, Serializable {
 		impuesto.setBaseImponible(lineProperty.getValue());
 		
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI07_PORCENTAJE_RETENER);
-		impuesto.setPorcentajeRetener(lineProperty.getValue());
+		impuesto.setPorcentajeRetener(obtenerPorcentajeRetener(lineProperty.getValue()));
 		
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEI07_VALOR_RETENIDO);
 		impuesto.setValorRetenido(lineProperty.getValue());
@@ -148,6 +149,19 @@ public class RetencionBuildUtil implements DocumentTransformUtil, Serializable {
 		adicional.setFillerAdRet(lineProperty.getNewLine().trim());
 		
 		return adicional;
+	}
+	
+	private static String obtenerPorcentajeRetener(String pValor) {
+		String porcentajeRetener = pValor;
+		
+		if (Objects.nonNull(pValor) && !pValor.isEmpty()) {
+			if (Integer.parseInt(pValor) > 100) {
+				Double porcentajeRetenerDecimal = Double.parseDouble(pValor) / 100; 
+				porcentajeRetener = porcentajeRetenerDecimal.toString();
+			}
+		}
+		
+		return porcentajeRetener;
 	}
 
 }
