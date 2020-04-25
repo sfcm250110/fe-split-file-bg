@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Factura implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private Cabecera cabecera;
 	private List<Detalle> detalles;
 	private List<Impuesto> impuestos;
@@ -52,5 +52,10 @@ public class Factura implements Serializable {
 	public void setAdicional(List<Adicional> adicional) {
 		this.adicional = adicional;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Factura [cabecera=" + cabecera + ", detalles=" + detalles + ", impuestos=" + impuestos + ", retenciones=" + retenciones + ", adicional=" + adicional + "]";
+	}
+
 }

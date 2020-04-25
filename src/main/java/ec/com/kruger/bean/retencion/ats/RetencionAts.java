@@ -2,7 +2,7 @@ package ec.com.kruger.bean.retencion.ats;
 
 import java.io.Serializable;
 
-public class ImpuestoComprobanteRetencionAts implements Serializable {
+public class RetencionAts implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -135,8 +135,8 @@ public class ImpuestoComprobanteRetencionAts implements Serializable {
 
 	@Override
 	public String toString() {
-		return "ImpuestoComprobanteRetencion [tipoRegistro=" + tipoRegistro + ", codigoDocumento=" + codigoDocumento + ", establecimiento=" + establecimiento + ", puntoEmision=" + puntoEmision + ", secuencial=" + secuencial + ", codigo=" + codigo + ", codigoRetencion=" + codigoRetencion + ", baseImponible=" + baseImponible + ", porcentajeRetener=" + porcentajeRetener + ", valorRetenido="
-				+ valorRetenido + ", fechaPagoDiv=" + fechaPagoDiv + ", impuestoRentaSoc=" + impuestoRentaSoc + ", ejercicioFiscalUltDiv=" + ejercicioFiscalUltDiv + ", fillerImpuestoComprobanteRetencion=" + fillerImpuestoComprobanteRetencion + "]";
+		return "RetencionAts [tipoRegistro=" + tipoRegistro + ", codigoDocumento=" + codigoDocumento + ", establecimiento=" + establecimiento + ", puntoEmision=" + puntoEmision + ", secuencial=" + secuencial + ", codigo=" + codigo + ", codigoRetencion=" + codigoRetencion + ", baseImponible=" + baseImponible + ", porcentajeRetener=" + porcentajeRetener + ", valorRetenido=" + valorRetenido
+				+ ", fechaPagoDiv=" + fechaPagoDiv + ", impuestoRentaSoc=" + impuestoRentaSoc + ", ejercicioFiscalUltDiv=" + ejercicioFiscalUltDiv + ", fillerImpuestoComprobanteRetencion=" + fillerImpuestoComprobanteRetencion + "]";
 	}
 
 }

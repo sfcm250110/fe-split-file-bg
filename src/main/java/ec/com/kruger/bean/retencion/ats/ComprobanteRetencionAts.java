@@ -8,10 +8,10 @@ public class ComprobanteRetencionAts implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private CabeceraComprobanteRetencionAts cabecera;
-	private List<DocumentoSustentoComprobanteRetencionAts> documentosSustento;
-	private List<ImpuestoComprobanteRetencionAts> impuestos;
-	private List<ImpuestosComprobanteRetencionAts> impuestosLista;
-	private List<InformacionAdicionalComprobanteRetencionAts> informacionesAdicional;
+	private List<DocumentoSustentoComprobanteRetencionAts> documentoSustentoLista;
+	private List<RetencionAts> retencionAtsLista;
+	private List<ImpuestoAts> impuestoAtsLista;
+	private List<InformacionAdicionalComprobanteRetencionAts> informacionAdicionalLista;
 
 	public CabeceraComprobanteRetencionAts getCabecera() {
 		return cabecera;
@@ -21,41 +21,41 @@ public class ComprobanteRetencionAts implements Serializable {
 		this.cabecera = cabecera;
 	}
 
-	public List<DocumentoSustentoComprobanteRetencionAts> getDocumentosSustento() {
-		return documentosSustento;
+	public List<DocumentoSustentoComprobanteRetencionAts> getDocumentoSustentoLista() {
+		return documentoSustentoLista;
 	}
 
-	public void setDocumentosSustento(List<DocumentoSustentoComprobanteRetencionAts> documentosSustento) {
-		this.documentosSustento = documentosSustento;
+	public void setDocumentoSustentoLista(List<DocumentoSustentoComprobanteRetencionAts> documentoSustentoLista) {
+		this.documentoSustentoLista = documentoSustentoLista;
 	}
 
-	public List<ImpuestoComprobanteRetencionAts> getImpuestos() {
-		return impuestos;
+	public List<RetencionAts> getRetencionAtsLista() {
+		return retencionAtsLista;
 	}
 
-	public void setImpuestos(List<ImpuestoComprobanteRetencionAts> impuestos) {
-		this.impuestos = impuestos;
+	public void setRetencionAtsLista(List<RetencionAts> retencionAtsLista) {
+		this.retencionAtsLista = retencionAtsLista;
 	}
 
-	public List<ImpuestosComprobanteRetencionAts> getImpuestosLista() {
-		return impuestosLista;
+	public List<ImpuestoAts> getImpuestoAtsLista() {
+		return impuestoAtsLista;
 	}
 
-	public void setImpuestosLista(List<ImpuestosComprobanteRetencionAts> impuestosLista) {
-		this.impuestosLista = impuestosLista;
+	public void setImpuestoAtsLista(List<ImpuestoAts> impuestoAtsLista) {
+		this.impuestoAtsLista = impuestoAtsLista;
 	}
 
-	public List<InformacionAdicionalComprobanteRetencionAts> getInformacionesAdicional() {
-		return informacionesAdicional;
+	public List<InformacionAdicionalComprobanteRetencionAts> getInformacionAdicionalLista() {
+		return informacionAdicionalLista;
 	}
 
-	public void setInformacionesAdicional(List<InformacionAdicionalComprobanteRetencionAts> informacionesAdicional) {
-		this.informacionesAdicional = informacionesAdicional;
+	public void setInformacionAdicionalLista(List<InformacionAdicionalComprobanteRetencionAts> informacionAdicionalLista) {
+		this.informacionAdicionalLista = informacionAdicionalLista;
 	}
 
 	@Override
 	public String toString() {
-		return "ComprobanteRetencion [cabecera=" + cabecera + ", documentosSustento=" + documentosSustento + ", impuestos=" + impuestos + ", impuestosLista=" + impuestosLista + ", informacionesAdicional=" + informacionesAdicional + "]";
+		return "ComprobanteRetencionAts [cabecera=" + cabecera + ", documentoSustentoLista=" + documentoSustentoLista + ", retencionAtsLista=" + retencionAtsLista + ", impuestoAtsLista=" + impuestoAtsLista + ", informacionAdicionalLista=" + informacionAdicionalLista + "]";
 	}
 
 }
