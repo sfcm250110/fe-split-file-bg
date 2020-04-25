@@ -164,13 +164,13 @@ public class ComprobanteRetencionBuildUtil implements DocumentTransformUtil, Ser
 		retencion.setTipoRegistro(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_CODIGO_DOCUMENTO);
-		retencion.setCodDoc(lineProperty.getValue());
+		retencion.setCodigoDocumento(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_ESTABLECIMIENTO);
-		retencion.setEstab(lineProperty.getValue());
+		retencion.setEstablecimiento(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_PUNTO_EMISION);
-		retencion.setPtoEmision(lineProperty.getValue());
+		retencion.setPuntoEmision(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_SECUENCIAL);
 		retencion.setSecuencial(lineProperty.getValue());
@@ -194,12 +194,12 @@ public class ComprobanteRetencionBuildUtil implements DocumentTransformUtil, Ser
 		retencion.setFechaPagoDiv(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_IMPUESTO_RENTA_SOC);
-		retencion.setImpRentaSoc(lineProperty.getValue());
+		retencion.setImpuestoRentaSoc(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_EJERCICIO_FISCAL_ULT_DIV);
-		retencion.setEjercFisUltDiv(lineProperty.getValue());
+		retencion.setEjercicioFiscalUltDiv(lineProperty.getValue());
 
-		retencion.setFiller(lineProperty.getNewLine().trim());
+		retencion.setFillerRetencionRetencionAts(lineProperty.getNewLine().trim());
 
 		return retencion;
 	}
@@ -211,19 +211,19 @@ public class ComprobanteRetencionBuildUtil implements DocumentTransformUtil, Ser
 		impuesto.setTipoRegistro(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_CODIGO_DOCUMENTO);
-		impuesto.setCodDoc(lineProperty.getValue());
+		impuesto.setCodigoDocumento(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_ESTABLECIMIENTO);
-		impuesto.setEstab(lineProperty.getValue());
+		impuesto.setEstablecimiento(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_PUNTO_EMISION);
-		impuesto.setPtoEmision(lineProperty.getValue());
+		impuesto.setPuntoEmision(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_SECUENCIAL);
 		impuesto.setSecuencial(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_CODIGO_DOCUMENTO_SUSTENTO_IMP);
-		impuesto.setCodigoDocSustento(lineProperty.getValue());
+		impuesto.setCodigoDocumentoSustento(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_CODIGO_PORCENTAJE);
 		impuesto.setCodigoPorcentaje(lineProperty.getValue());
@@ -237,7 +237,7 @@ public class ComprobanteRetencionBuildUtil implements DocumentTransformUtil, Ser
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_VALOR_IMPUESTO);
 		impuesto.setValorImpuesto(lineProperty.getValue());
 
-		impuesto.setFiller(lineProperty.getNewLine().trim());
+		impuesto.setFillerImpuestoAts(lineProperty.getNewLine().trim());
 
 		return impuesto;
 	}

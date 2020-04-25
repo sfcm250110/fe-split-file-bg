@@ -199,7 +199,7 @@ public class ComprobanteRetencionAtsBuildUtil implements DocumentTransformUtil, 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_EJERCICIO_FISCAL_ULT_DIV);
 		retencionAts.setEjercicioFiscalUltDiv(lineProperty.getValue());
 
-		retencionAts.setFillerImpuestoComprobanteRetencion(lineProperty.getNewLine().trim());
+		retencionAts.setFillerRetencionRetencionAts(lineProperty.getNewLine().trim());
 
 		return retencionAts;
 	}
@@ -237,7 +237,7 @@ public class ComprobanteRetencionAtsBuildUtil implements DocumentTransformUtil, 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_VALOR_IMPUESTO);
 		impuestoAts.setValorImpuesto(lineProperty.getValue());
 
-		impuestoAts.setFillerImpuestosComprobanteRetencion(lineProperty.getNewLine().trim());
+		impuestoAts.setFillerImpuestoAts(lineProperty.getNewLine().trim());
 
 		return impuestoAts;
 	}

@@ -19,7 +19,7 @@ public class RetencionAts implements Serializable {
 	private String fechaPagoDiv;
 	private String impuestoRentaSoc;
 	private String ejercicioFiscalUltDiv;
-	private String fillerImpuestoComprobanteRetencion;
+	private String fillerRetencionRetencionAts;
 
 	public String getTipoRegistro() {
 		return tipoRegistro;
@@ -125,18 +125,18 @@ public class RetencionAts implements Serializable {
 		this.ejercicioFiscalUltDiv = ejercicioFiscalUltDiv;
 	}
 
-	public String getFillerImpuestoComprobanteRetencion() {
-		return fillerImpuestoComprobanteRetencion;
+	public String getFillerRetencionRetencionAts() {
+		return fillerRetencionRetencionAts;
 	}
 
-	public void setFillerImpuestoComprobanteRetencion(String fillerImpuestoComprobanteRetencion) {
-		this.fillerImpuestoComprobanteRetencion = fillerImpuestoComprobanteRetencion;
+	public void setFillerRetencionRetencionAts(String fillerRetencionRetencionAts) {
+		this.fillerRetencionRetencionAts = fillerRetencionRetencionAts;
 	}
 
 	@Override
 	public String toString() {
 		return "RetencionAts [tipoRegistro=" + tipoRegistro + ", codigoDocumento=" + codigoDocumento + ", establecimiento=" + establecimiento + ", puntoEmision=" + puntoEmision + ", secuencial=" + secuencial + ", codigo=" + codigo + ", codigoRetencion=" + codigoRetencion + ", baseImponible=" + baseImponible + ", porcentajeRetener=" + porcentajeRetener + ", valorRetenido=" + valorRetenido
-				+ ", fechaPagoDiv=" + fechaPagoDiv + ", impuestoRentaSoc=" + impuestoRentaSoc + ", ejercicioFiscalUltDiv=" + ejercicioFiscalUltDiv + ", fillerImpuestoComprobanteRetencion=" + fillerImpuestoComprobanteRetencion + "]";
+				+ ", fechaPagoDiv=" + fechaPagoDiv + ", impuestoRentaSoc=" + impuestoRentaSoc + ", ejercicioFiscalUltDiv=" + ejercicioFiscalUltDiv + ", fillerRetencionRetencionAts=" + fillerRetencionRetencionAts + "]";
 	}
 
 }

@@ -16,7 +16,7 @@ public class ImpuestoAts implements Serializable {
 	private String baseImponible;
 	private String tarifa;
 	private String valorImpuesto;
-	private String fillerImpuestosComprobanteRetencion;
+	private String fillerImpuestoAts;
 
 	public String getTipoRegistro() {
 		return tipoRegistro;
@@ -98,18 +98,18 @@ public class ImpuestoAts implements Serializable {
 		this.valorImpuesto = valorImpuesto;
 	}
 
-	public String getFillerImpuestosComprobanteRetencion() {
-		return fillerImpuestosComprobanteRetencion;
+	public String getFillerImpuestoAts() {
+		return fillerImpuestoAts;
 	}
 
-	public void setFillerImpuestosComprobanteRetencion(String fillerImpuestosComprobanteRetencion) {
-		this.fillerImpuestosComprobanteRetencion = fillerImpuestosComprobanteRetencion;
+	public void setFillerImpuestoAts(String fillerImpuestoAts) {
+		this.fillerImpuestoAts = fillerImpuestoAts;
 	}
 
 	@Override
 	public String toString() {
 		return "ImpuestoAts [tipoRegistro=" + tipoRegistro + ", codigoDocumento=" + codigoDocumento + ", establecimiento=" + establecimiento + ", puntoEmision=" + puntoEmision + ", secuencial=" + secuencial + ", codigoDocumentoSustento=" + codigoDocumentoSustento + ", codigoPorcentaje=" + codigoPorcentaje + ", baseImponible=" + baseImponible + ", tarifa=" + tarifa + ", valorImpuesto="
-				+ valorImpuesto + ", fillerImpuestosComprobanteRetencion=" + fillerImpuestosComprobanteRetencion + "]";
+				+ valorImpuesto + ", fillerImpuestoAts=" + fillerImpuestoAts + "]";
 	}
 
 }
