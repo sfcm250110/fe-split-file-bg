@@ -522,11 +522,11 @@ public abstract interface DocumentTransformUtil {
 	// --------------------------------------------------------------------------------------------------------------------
 	public static final String UGEC07_V2_CODIGO = "1";
 	public static final String UGEC07_V2_CODIGO_RETENCION = "5";
-	public static final String UGEC07_V2_BASE_RETENCION = "10";
+	public static final String UGEC07_V2_BASE_RETENCION = "13,2";
 	public static final String UGEC07_V2_PORCENTAJE_RETENER = "3";
-	public static final String UGEC07_V2_VALOR_RETENIDO = "10";
+	public static final String UGEC07_V2_VALOR_RETENIDO = "13,2";
 	public static final String UGEC07_V2_FECHA_PAGO_DIV = "8";
-	public static final String UGEC07_V2_IMPUESTO_RENTA_SOC = "11";
+	public static final String UGEC07_V2_IMPUESTO_RENTA_SOC = "13,2";
 	public static final String UGEC07_V2_EJERCICIO_FISCAL_ULT_DIV = "4";
 	
 	// --------------------------------------------------------------------------------------------------------------------

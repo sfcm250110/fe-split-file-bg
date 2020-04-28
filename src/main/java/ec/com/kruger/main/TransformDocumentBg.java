@@ -2,6 +2,7 @@ package ec.com.kruger.main;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.Serializable;
 
 import ec.com.kruger.bean.factura.Factura;
@@ -30,11 +31,10 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 	public static final String PATH_FILE_NOTA_CREDITO = "C:\\proyectos\\bg\\desarrollo\\modificar-ride\\files-test\\SF2410_04_002_20180718.txt";
 	public static final String PATH_FILE_RETENCIONES_CA_FUSE_OK = "C:\\proyectos\\bg\\desarrollo\\clave-acceso-genera-fuse\\files-gl\\RETENCIONES_TC_02_20180831.txt";
 	public static final String PATH_FILE_RETENCIONES_CA_FUSE_ERROR = "C:\\proyectos\\bg\\desarrollo\\clave-acceso-genera-fuse\\files-gl\\SF2420_20_020_20180831_232415.txt";
-	public static final String PATH_FILE_RETENCIONES_ATS = "C:\\Users\\kruger\\Desktop\\bg\\requerimientos\\retenciones-v2-ats\\xml-bg-borrador\\SF2420_02_003_20190624_094820.txt";
-	public static final String PATH_FILE_RETENCIONES_ATS_V2 = "C:\\proyectos\\bg\\retenciones-v2\\archivos-xml-bg\\error-value-07\\SF2422_03_004_20200422_155841.txt";
 	public static final String PATH_FILE_LIQUIDACION_COMPRAS = "C:\\proyectos\\bg\\files-bg\\SF2425_03_002_20200106_083838.txt";
+	public static final String PATH_FILE_RETENCIONES_ATS = "C:\\proyectos\\bg\\retenciones-v2\\archivos-xml-bg\\error-pro-carga-incompleta\\RETENCIONES_TC_02_20200413.txt";
 	
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		try {
 			int metodoTest = 6;
 			
@@ -71,7 +71,7 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 		}
 	}
 	
-	private static void deberiaObtenerFacturaTest() throws Exception {
+	private static void deberiaObtenerFacturaTest() throws IOException  {
 		ContentFile contenidoArchivo = getContentFile(PATH_FILE_FACTURA);
 		Cabecera cabecera = CabeceraPrincipalBuildUtil.getCabeceraFile(contenidoArchivo.getLineaCabecera());
 		Factura factura = obtenerFactura(contenidoArchivo.getContenido());
@@ -80,7 +80,7 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 		System.out.println(factura);
 	}
 	
-	private static void notaCreditoTest() throws Exception {
+	private static void notaCreditoTest() throws IOException {
 		String line = null;
 		BufferedReader in = new BufferedReader(new FileReader(PATH_FILE_NOTA_CREDITO));
 
@@ -110,7 +110,7 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 		in.close();
 	}
 	
-	private static void comprobanteRetencionTest() throws Exception {
+	private static void comprobanteRetencionTest() throws IOException {
 		String line = null;
 		BufferedReader in = new BufferedReader(new FileReader(PATH_FILE_RETENCIONES_ATS));
 
@@ -138,7 +138,7 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 		in.close();
 	}
 	
-	private static void comprobanteRetencionCaFuseTest() throws Exception {
+	private static void comprobanteRetencionCaFuseTest() throws IOException {
 		String line = null;
 		BufferedReader in = new BufferedReader(new FileReader(PATH_FILE_RETENCIONES_CA_FUSE_ERROR));
 
@@ -164,7 +164,7 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 		in.close();
 	}
 	
-	private static void liquidacionComprasTest() throws Exception {
+	private static void liquidacionComprasTest() throws IOException {
 		String line = null;
 		BufferedReader in = new BufferedReader(new FileReader(PATH_FILE_LIQUIDACION_COMPRAS));
 
@@ -175,8 +175,8 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 		in.close();
 	}
 	
-	private static void comprobanteRetencionAtsTest() throws Exception {
-		ContentFile contenidoArchivo = getContentFile(PATH_FILE_RETENCIONES_ATS_V2);
+	private static void comprobanteRetencionAtsTest() throws IOException {
+		ContentFile contenidoArchivo = getContentFile(PATH_FILE_RETENCIONES_ATS);
 		Cabecera cabecera = CabeceraPrincipalBuildUtil.getCabeceraFile(contenidoArchivo.getLineaCabecera());
 		ComprobanteRetencionAts comprobanteRetencion = obtenerComprobanteRetencionAts(contenidoArchivo.getContenido());
 		
@@ -184,7 +184,7 @@ public class TransformDocumentBg extends DocumentTransformUtilImpl implements Se
 		System.out.println(cabecera);
 	}
 	
-	private static ContentFile getContentFile(String pFilePath) throws Exception {
+	private static ContentFile getContentFile(String pFilePath) throws IOException  {
 		BufferedReader inFile = new BufferedReader(new FileReader(pFilePath));
 		String lineaCabecera = inFile.readLine();
 		String linea = inFile.readLine();

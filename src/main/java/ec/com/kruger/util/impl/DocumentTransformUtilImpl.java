@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import ec.com.kruger.bean.factura.Adicional;
 import ec.com.kruger.bean.factura.Cabecera;
@@ -46,15 +44,12 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 
 	private static final long serialVersionUID = 1L;
 
-	private static final Logger log = Logger.getLogger(DocumentTransformUtilImpl.class.getName());
-
-	public static Factura obtenerFactura(String pFactura) throws Exception {
+	public static Factura obtenerFactura(String pFactura) {
 		Cabecera cabecera = new Cabecera();
 		Adicional adicional = new Adicional();
 		Detalle detalle = new Detalle();
 		Impuesto impuesto = new Impuesto();
 		Retencion retencion = new Retencion();
-		Factura factura = new Factura();
 		ArrayList<Impuesto> listaImpuestos = new ArrayList<Impuesto>();
 		ArrayList<Detalle> listaDetalle = new ArrayList<Detalle>();
 		ArrayList<Adicional> listaAdicional = new ArrayList<Adicional>();
@@ -90,26 +85,21 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 			}
 		}
 
-		try {
-			factura.setCabecera(cabecera);
-			factura.setImpuestos(listaImpuestos);
-			factura.setAdicional(listaAdicional);
-			factura.setRetenciones(listaRetencion);
-			factura.setDetalles(listaDetalle);
-
-		} catch (Exception e) {
-			log.log(Level.SEVERE, e.getMessage());
-		}
+		Factura factura = new Factura();
+		factura.setCabecera(cabecera);
+		factura.setImpuestos(listaImpuestos);
+		factura.setAdicional(listaAdicional);
+		factura.setRetenciones(listaRetencion);
+		factura.setDetalles(listaDetalle);
 
 		return factura;
 	}
 
-	public static NotaCreditoNC obtenerNotaCredito(String pNotaCredito) throws Exception {
+	public static NotaCreditoNC obtenerNotaCredito(String pNotaCredito) {
 		CabeceraNC cabecera = new CabeceraNC();
 		AdicionalNC adicional = new AdicionalNC();
 		DetalleNC detalle = new DetalleNC();
 		ImpuestoNC impuesto = new ImpuestoNC();
-		NotaCreditoNC notaCredito = new NotaCreditoNC();
 		ArrayList<ImpuestoNC> listaImpuestos = new ArrayList<ImpuestoNC>();
 		ArrayList<DetalleNC> listaDetalle = new ArrayList<DetalleNC>();
 		ArrayList<AdicionalNC> listaAdicional = new ArrayList<AdicionalNC>();
@@ -138,25 +128,20 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 			}
 		}
 
-		try {
-			notaCredito.setCabecera(cabecera);
-			notaCredito.setImpuestos(listaImpuestos);
-			notaCredito.setAdicional(listaAdicional);
-			notaCredito.setDetalles(listaDetalle);
-
-		} catch (Exception e) {
-			log.log(Level.SEVERE, e.getMessage());
-		}
+		NotaCreditoNC notaCredito = new NotaCreditoNC();
+		notaCredito.setCabecera(cabecera);
+		notaCredito.setImpuestos(listaImpuestos);
+		notaCredito.setAdicional(listaAdicional);
+		notaCredito.setDetalles(listaDetalle);
 
 		return notaCredito;
 	}
 
-	public static NotaDebitoND obtenerNotaDebito(String pNotaDebito) throws Exception {
+	public static NotaDebitoND obtenerNotaDebito(String pNotaDebito) {
 		CabeceraND cabecera = new CabeceraND();
 		AdicionalND adicional = new AdicionalND();
 		ImpuestoND impuesto = new ImpuestoND();
 		MotivoND motivo = new MotivoND();
-		NotaDebitoND notaDebito = new NotaDebitoND();
 		ArrayList<ImpuestoND> listaImpuestos = new ArrayList<ImpuestoND>();
 		ArrayList<AdicionalND> listaAdicional = new ArrayList<AdicionalND>();
 		ArrayList<MotivoND> listaMotivos = new ArrayList<MotivoND>();
@@ -187,24 +172,19 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 			adicional = new AdicionalND();
 		}
 
-		try {
-			notaDebito.setCabecera(cabecera);
-			notaDebito.setImpuestos(listaImpuestos);
-			notaDebito.setAdicional(listaAdicional);
-			notaDebito.setMotivos(listaMotivos);
-
-		} catch (Exception e) {
-			log.log(Level.SEVERE, e.getMessage());
-		}
+		NotaDebitoND notaDebito = new NotaDebitoND();
+		notaDebito.setCabecera(cabecera);
+		notaDebito.setImpuestos(listaImpuestos);
+		notaDebito.setAdicional(listaAdicional);
+		notaDebito.setMotivos(listaMotivos);
 
 		return notaDebito;
 	}
 
-	public static RetencionR obtenerRetencion(String pRetencion) throws Exception {
+	public static RetencionR obtenerRetencion(String pRetencion) {
 		CabeceraR cabecera = new CabeceraR();
 		AdicionalR adicional = new AdicionalR();
 		ImpuestoR impuesto = new ImpuestoR();
-		RetencionR retencion = new RetencionR();
 		ArrayList<ImpuestoR> listaImpuestos = new ArrayList<ImpuestoR>();
 		ArrayList<AdicionalR> listaAdicional = new ArrayList<AdicionalR>();
 		List<String> lista = Arrays.asList(pRetencion.split(BREAL_LINE));
@@ -227,19 +207,15 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 			}
 		}
 
-		try {
-			retencion.setCabecera(cabecera);
-			retencion.setImpuestos(listaImpuestos);
-			retencion.setAdicional(listaAdicional);
-
-		} catch (Exception e) {
-			log.log(Level.SEVERE, e.getMessage());
-		}
+		RetencionR retencion = new RetencionR();
+		retencion.setCabecera(cabecera);
+		retencion.setImpuestos(listaImpuestos);
+		retencion.setAdicional(listaAdicional);
 
 		return retencion;
 	}
 
-	public static LiquidacionCompras obtenerLiquidacionCompras(String pLiquidacionCompra) throws Exception {
+	public static LiquidacionCompras obtenerLiquidacionCompras(String pLiquidacionCompra) {
 		CabeceraLiquidacionCompras cabecera = new CabeceraLiquidacionCompras();
 		List<DetalleLiquidacionCompras> detalles = new ArrayList<DetalleLiquidacionCompras>();
 		List<ImpuestoLiquidacionCompras> impuestos = new ArrayList<ImpuestoLiquidacionCompras>();
@@ -274,21 +250,16 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 		}
 
 		LiquidacionCompras liquidacionCompras = new LiquidacionCompras();
-		try {
-			liquidacionCompras.setCabecera(cabecera);
-			liquidacionCompras.setDetalles(detalles);
-			liquidacionCompras.setImpuestos(impuestos);
-			liquidacionCompras.setReembolsos(reembolsos);
-			liquidacionCompras.setInformacionesAdicional(informacionesAdicional);
-
-		} catch (Exception e) {
-			log.log(Level.SEVERE, e.getMessage());
-		}
+		liquidacionCompras.setCabecera(cabecera);
+		liquidacionCompras.setDetalles(detalles);
+		liquidacionCompras.setImpuestos(impuestos);
+		liquidacionCompras.setReembolsos(reembolsos);
+		liquidacionCompras.setInformacionesAdicional(informacionesAdicional);
 
 		return liquidacionCompras;
 	}
 
-	public static ComprobanteRetencionAts obtenerComprobanteRetencionAts(String pLineasComprobanteRetencion) throws Exception {
+	public static ComprobanteRetencionAts obtenerComprobanteRetencionAts(String pLineasComprobanteRetencion) {
 		CabeceraComprobanteRetencionAts cabecera = new CabeceraComprobanteRetencionAts();
 		List<DocumentoSustentoComprobanteRetencionAts> documentoSustentoLista = new ArrayList<DocumentoSustentoComprobanteRetencionAts>();
 		List<RetencionAts> retencionAtsLista = new ArrayList<RetencionAts>();
@@ -323,16 +294,11 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 		}
 
 		ComprobanteRetencionAts comprobanteRetencion = new ComprobanteRetencionAts();
-		try {
-			comprobanteRetencion.setCabecera(cabecera);
-			comprobanteRetencion.setDocumentoSustentoLista(documentoSustentoLista);
-			comprobanteRetencion.setRetencionAtsLista(retencionAtsLista);
-			comprobanteRetencion.setImpuestoAtsLista(impuestoAtsLista);
-			comprobanteRetencion.setInformacionAdicionalLista(informacionAdicionalLista);
-
-		} catch (Exception e) {
-			log.log(Level.SEVERE, e.getMessage());
-		}
+		comprobanteRetencion.setCabecera(cabecera);
+		comprobanteRetencion.setDocumentoSustentoLista(documentoSustentoLista);
+		comprobanteRetencion.setRetencionAtsLista(retencionAtsLista);
+		comprobanteRetencion.setImpuestoAtsLista(impuestoAtsLista);
+		comprobanteRetencion.setInformacionAdicionalLista(informacionAdicionalLista);
 
 		return comprobanteRetencion;
 	}
