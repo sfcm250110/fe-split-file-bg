@@ -143,7 +143,8 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGEA01_SECUENCIAL = "9";
 	public static final String UGEA01_INFO_ADICIONAL_1 = "100";
 	public static final String UGEA01_INFO_ADICIONAL_2 = "100";
-	public static final String FILLER_AD_FAC = "182";
+	public static final String UGEA01_INFO_ADICIONAL_3 = "100";
+	public static final String FILLER_AD_FAC = "82";
 
 	// --------------------------------------------------------------------------------------------------------------------
 	// DEFINICION CABECERA DE NOTA DE CREDITO ELECTRONICA
@@ -493,7 +494,7 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGEC07_V2_CLAVE_ACCESO_BG = "50";
 	public static final String UGEC07_V2_PARTE_RELACIONADA = "2";
 	public static final String UGEC07_V2_FORMA_PAGO = "2";
-	public static final String UGEC07_V2_TOTAL_PAGO = "11";
+	public static final String UGEC07_V2_TOTAL_PAGO = "13,2";
 	public static final String UGEC07_V2_FILLER_CABECERA_COMPROBANTE_RETENCION = "79";
 	
 	// --------------------------------------------------------------------------------------------------------------------
@@ -508,9 +509,9 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGEC07_V2_PAGO_LOCAL_EXTERIOR = "2";
 	public static final String UGEC07_V2_TOTAL_SIN_IMPUESTO = "13,2";
 	public static final String UGEC07_V2_IMPORTE_TOTAL = "13,2";
-	public static final String UGEC07_V2_TOTAL_COMPROBANTE_REEMBOLSO = "11,2";
-	public static final String UGEC07_V2_TOTAL_BASE_IMPUESTO_REEMBOLSO = "11,2";
-	public static final String UGEC07_V2_TOTAL_IMPUESTO_REEMBOLSO = "11,2";
+	public static final String UGEC07_V2_TOTAL_COMPROBANTE_REEMBOLSO = "13,2";
+	public static final String UGEC07_V2_TOTAL_BASE_IMPUESTO_REEMBOLSO = "13,2";
+	public static final String UGEC07_V2_TOTAL_IMPUESTO_REEMBOLSO = "13,2";
 	public static final String UGEC07_V2_TIPO_REGIMEN = "2";
 	public static final String UGEC07_V2_PAIS_EFECTIVO_PAGO = "3";
 	public static final String UGEC07_V2_APLICA_CONVENIO_DOBLE_TRIB = "2";
@@ -518,11 +519,11 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGEC07_V2_PAGO_REG_FIS = "2";
 	
 	// --------------------------------------------------------------------------------------------------------------------
-	// DEFINICION DE IMPUESTO DE COMPROBANTE DE RETENCION V2
+	// DEFINICION DE RETENCION DE COMPROBANTE DE RETENCION V2
 	// --------------------------------------------------------------------------------------------------------------------
 	public static final String UGEC07_V2_CODIGO = "1";
 	public static final String UGEC07_V2_CODIGO_RETENCION = "5";
-	public static final String UGEC07_V2_BASE_RETENCION = "13,2";
+	public static final String UGEC07_V2_BASE_IMPONIBLE_RETENCION = "13,2";
 	public static final String UGEC07_V2_PORCENTAJE_RETENER = "3";
 	public static final String UGEC07_V2_VALOR_RETENIDO = "13,2";
 	public static final String UGEC07_V2_FECHA_PAGO_DIV = "8";
@@ -534,9 +535,9 @@ public abstract interface DocumentTransformUtil {
 	// --------------------------------------------------------------------------------------------------------------------
 	public static final String UGEC07_V2_CODIGO_DOCUMENTO_SUSTENTO_IMP = "1";
 	public static final String UGEC07_V2_CODIGO_PORCENTAJE = "5";
-	public static final String UGEC07_V2_BASE_IMPONIBLE = "11";
-	public static final String UGEC07_V2_TARIFA = "11";
-	public static final String UGEC07_V2_VALOR_IMPUESTO = "11";
+	public static final String UGEC07_V2_BASE_IMPONIBLE = "13,2";
+	public static final String UGEC07_V2_TARIFA = "13,2";
+	public static final String UGEC07_V2_VALOR_IMPUESTO = "13,2";
 	
 	// --------------------------------------------------------------------------------------------------------------------
 	// DEFINICION DE INFORMACION ADICIONAL DE COMPROBANTE DE RETENCION V2

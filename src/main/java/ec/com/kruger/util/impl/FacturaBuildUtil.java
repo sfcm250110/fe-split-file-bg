@@ -329,6 +329,9 @@ public class FacturaBuildUtil implements DocumentTransformUtil, Serializable {
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA01_INFO_ADICIONAL_2);
 		adicional.setInfoAdicional2(lineProperty.getValue());
 		
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEA01_INFO_ADICIONAL_3);
+		adicional.setInfoAdicional3(lineProperty.getValue());
+		
 		adicional.setFillerAdFac(lineProperty.getNewLine().trim());
 
 		return adicional;

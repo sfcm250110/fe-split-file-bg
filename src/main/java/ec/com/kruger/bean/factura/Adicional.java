@@ -3,9 +3,9 @@ package ec.com.kruger.bean.factura;
 import java.io.Serializable;
 
 public class Adicional implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private String tipoRegistro;
 	private String codDoc;
 	private String estab;
@@ -13,6 +13,7 @@ public class Adicional implements Serializable {
 	private String secuencial;
 	private String infoAdicional1;
 	private String infoAdicional2;
+	private String infoAdicional3;
 	private String fillerAdFac;
 
 	public String getTipoRegistro() {
@@ -71,6 +72,14 @@ public class Adicional implements Serializable {
 		this.infoAdicional2 = infoAdicional2;
 	}
 
+	public String getInfoAdicional3() {
+		return infoAdicional3;
+	}
+
+	public void setInfoAdicional3(String infoAdicional3) {
+		this.infoAdicional3 = infoAdicional3;
+	}
+
 	public String getFillerAdFac() {
 		return this.fillerAdFac;
 	}
@@ -79,8 +88,9 @@ public class Adicional implements Serializable {
 		this.fillerAdFac = fillerAdFac;
 	}
 
+	@Override
 	public String toString() {
-		return "Adicional{tipoRegistro=" + this.tipoRegistro + ", codDoc=" + this.codDoc + ", estab=" + this.estab + ", ptoEmision=" + this.ptoEmision + ", secuencial=" + this.secuencial + ", infoAdicional1=" + this.infoAdicional1 + ", infoAdicional2=" + this.infoAdicional2 + ", fillerAdFac=" + this.fillerAdFac + '}';
+		return "Adicional [tipoRegistro=" + tipoRegistro + ", codDoc=" + codDoc + ", estab=" + estab + ", ptoEmision=" + ptoEmision + ", secuencial=" + secuencial + ", infoAdicional1=" + infoAdicional1 + ", infoAdicional2=" + infoAdicional2 + ", infoAdicional3=" + infoAdicional3 + ", fillerAdFac=" + fillerAdFac + "]";
 	}
 
 }

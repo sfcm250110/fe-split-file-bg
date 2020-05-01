@@ -181,7 +181,7 @@ public class ComprobanteRetencionAtsBuildUtil implements DocumentTransformUtil, 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_CODIGO_RETENCION);
 		retencionAts.setCodigoRetencion(lineProperty.getValue());
 
-		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_BASE_RETENCION);
+		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_BASE_IMPONIBLE_RETENCION);
 		retencionAts.setBaseImponible(lineProperty.getValue());
 
 		lineProperty = DocumentTransformUtilImpl.getLineProperty(lineProperty.getNewLine(), UGEC07_V2_PORCENTAJE_RETENER);

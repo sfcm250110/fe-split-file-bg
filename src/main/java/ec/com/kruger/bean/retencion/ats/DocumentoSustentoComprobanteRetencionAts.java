@@ -215,20 +215,20 @@ public class DocumentoSustentoComprobanteRetencionAts implements Serializable {
 		this.pagoLocalExterior = pagoLocalExterior;
 	}
 
-	@Override
-	public String toString() {
-		return "DocumentoSustentoComprobanteRetencion [tipoRegistro=" + tipoRegistro + ", codigoDocumento=" + codigoDocumento + ", establecimiento=" + establecimiento + ", puntoEmision=" + puntoEmision + ", secuencial=" + secuencial + ", codigoSustento=" + codigoSustento + ", codigoDocumentoSustento=" + codigoDocumentoSustento + ", numeroDocumentoSustento=" + numeroDocumentoSustento
-				+ ", fechaEmisionDocumentoSustento=" + fechaEmisionDocumentoSustento + ", fechaRegistroContable=" + fechaRegistroContable + ", numeroAutorizacionDocumentoSustento=" + numeroAutorizacionDocumentoSustento + ", pagoLocalExterior=" + pagoLocalExterior + ", totalSinImpuesto=" + totalSinImpuesto + ", importeTotal=" + importeTotal + ", totalComprobanteReembolso="
-				+ totalComprobanteReembolso + ", totalBaseImponibleReembolso=" + totalBaseImponibleReembolso + ", totalImpuestoReembolso=" + totalImpuestoReembolso + ", tipoRegimen=" + tipoRegimen + ", paisEfectivoPago=" + paisEfectivoPago + ", aplicaConvenioDobleTrib=" + aplicaConvenioDobleTrib + ", pagoExtSujRetNomLeg=" + pagoExtSujRetNomLeg + ", pagoRegFis=" + pagoRegFis
-				+ ", fillerDocumentoSustentoComprobanteRetencion=" + fillerDocumentoSustentoComprobanteRetencion + "]";
-	}
-
 	public String getTipoRegi() {
 		return tipoRegi;
 	}
 
 	public void setTipoRegi(String tipoRegi) {
 		this.tipoRegi = tipoRegi;
+	}
+
+	@Override
+	public String toString() {
+		return "DocumentoSustentoComprobanteRetencionAts [tipoRegistro=" + tipoRegistro + ", codigoDocumento=" + codigoDocumento + ", establecimiento=" + establecimiento + ", puntoEmision=" + puntoEmision + ", secuencial=" + secuencial + ", codigoSustento=" + codigoSustento + ", codigoDocumentoSustento=" + codigoDocumentoSustento + ", numeroDocumentoSustento=" + numeroDocumentoSustento
+				+ ", fechaEmisionDocumentoSustento=" + fechaEmisionDocumentoSustento + ", fechaRegistroContable=" + fechaRegistroContable + ", numeroAutorizacionDocumentoSustento=" + numeroAutorizacionDocumentoSustento + ", pagoLocalExterior=" + pagoLocalExterior + ", tipoRegi=" + tipoRegi + ", totalSinImpuesto=" + totalSinImpuesto + ", importeTotal=" + importeTotal
+				+ ", totalComprobanteReembolso=" + totalComprobanteReembolso + ", totalBaseImponibleReembolso=" + totalBaseImponibleReembolso + ", totalImpuestoReembolso=" + totalImpuestoReembolso + ", tipoRegimen=" + tipoRegimen + ", paisEfectivoPago=" + paisEfectivoPago + ", aplicaConvenioDobleTrib=" + aplicaConvenioDobleTrib + ", pagoExtSujRetNomLeg=" + pagoExtSujRetNomLeg + ", pagoRegFis="
+				+ pagoRegFis + ", fillerDocumentoSustentoComprobanteRetencion=" + fillerDocumentoSustentoComprobanteRetencion + "]";
 	}
 
 }
