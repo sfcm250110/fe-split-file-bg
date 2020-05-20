@@ -2,7 +2,7 @@ package ec.com.kruger.bean.retencion.ats;
 
 import java.io.Serializable;
 
-public class CabeceraComprobanteRetencionAts implements Serializable {
+public class CabeceraAts implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -25,9 +25,9 @@ public class CabeceraComprobanteRetencionAts implements Serializable {
 	private String porcentajeIva;
 	private String claveAcceso;
 	private String parteRelacionada;
+	private String localExterior;
 	private String formaPago;
 	private String totalPago;
-	private String fillerCabeceraComprobanteRetencion;
 
 	public String getTipoRegistro() {
 		return tipoRegistro;
@@ -181,6 +181,14 @@ public class CabeceraComprobanteRetencionAts implements Serializable {
 		this.parteRelacionada = parteRelacionada;
 	}
 
+	public String getLocalExterior() {
+		return localExterior;
+	}
+
+	public void setLocalExterior(String localExterior) {
+		this.localExterior = localExterior;
+	}
+
 	public String getFormaPago() {
 		return formaPago;
 	}
@@ -197,22 +205,11 @@ public class CabeceraComprobanteRetencionAts implements Serializable {
 		this.totalPago = totalPago;
 	}
 
-	public String getFillerCabeceraComprobanteRetencion() {
-		return fillerCabeceraComprobanteRetencion;
-	}
-
-	public void setFillerCabeceraComprobanteRetencion(String fillerCabeceraComprobanteRetencion) {
-		this.fillerCabeceraComprobanteRetencion = fillerCabeceraComprobanteRetencion;
-	}
-
 	@Override
 	public String toString() {
-		return "CabeceraComprobanteRetencion [tipoRegistro=" + tipoRegistro + ", codDoc=" + codDoc + ", estab=" + estab + ", ptoEmision=" + ptoEmision + ", secuencial=" + secuencial + ", fechaEmision=" + fechaEmision + ", horaEmision=" + horaEmision + ", dirEstablecimiento=" + dirEstablecimiento + ", tipoIdentificacionRetenido=" + tipoIdentificacionRetenido + ", razonSocialRetenido="
-				+ razonSocialRetenido + ", identificacionRetenido=" + identificacionRetenido + ", peridoFiscal=" + peridoFiscal + ", numeroGenerado=" + numeroGenerado + ", fechaVigencia=" + fechaVigencia + ", oficinaBg=" + oficinaBg + ", secuencialBg=" + secuencialBg + ", porcentajeIva=" + porcentajeIva + ", claveAcceso=" + claveAcceso + ", parteRelacionada=" + parteRelacionada + ", formaPago="
-				+ formaPago + ", totalPago=" + totalPago + ", fillerCabeceraComprobanteRetencion=" + fillerCabeceraComprobanteRetencion + ", getTipoRegistro()=" + getTipoRegistro() + ", getCodDoc()=" + getCodDoc() + ", getEstab()=" + getEstab() + ", getPtoEmision()=" + getPtoEmision() + ", getSecuencial()=" + getSecuencial() + ", getFechaEmision()=" + getFechaEmision() + ", getHoraEmision()="
-				+ getHoraEmision() + ", getDirEstablecimiento()=" + getDirEstablecimiento() + ", getTipoIdentificacionRetenido()=" + getTipoIdentificacionRetenido() + ", getRazonSocialRetenido()=" + getRazonSocialRetenido() + ", getIdentificacionRetenido()=" + getIdentificacionRetenido() + ", getPeridoFiscal()=" + getPeridoFiscal() + ", getNumeroGenerado()=" + getNumeroGenerado()
-				+ ", getFechaVigencia()=" + getFechaVigencia() + ", getOficinaBg()=" + getOficinaBg() + ", getSecuencialBg()=" + getSecuencialBg() + ", getPorcentajeIva()=" + getPorcentajeIva() + ", getClaveAcceso()=" + getClaveAcceso() + ", getParteRelacionada()=" + getParteRelacionada() + ", getFormaPago()=" + getFormaPago() + ", getTotalPago()=" + getTotalPago()
-				+ ", getFillerCabeceraComprobanteRetencion()=" + getFillerCabeceraComprobanteRetencion() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "CabeceraAts [tipoRegistro=" + tipoRegistro + ", codDoc=" + codDoc + ", estab=" + estab + ", ptoEmision=" + ptoEmision + ", secuencial=" + secuencial + ", fechaEmision=" + fechaEmision + ", horaEmision=" + horaEmision + ", dirEstablecimiento=" + dirEstablecimiento + ", tipoIdentificacionRetenido=" + tipoIdentificacionRetenido + ", razonSocialRetenido=" + razonSocialRetenido
+				+ ", identificacionRetenido=" + identificacionRetenido + ", peridoFiscal=" + peridoFiscal + ", numeroGenerado=" + numeroGenerado + ", fechaVigencia=" + fechaVigencia + ", oficinaBg=" + oficinaBg + ", secuencialBg=" + secuencialBg + ", porcentajeIva=" + porcentajeIva + ", claveAcceso=" + claveAcceso + ", parteRelacionada=" + parteRelacionada + ", localExterior=" + localExterior
+				+ ", formaPago=" + formaPago + ", totalPago=" + totalPago + "]";
 	}
 
 }

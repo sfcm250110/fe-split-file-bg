@@ -472,77 +472,83 @@ public abstract interface DocumentTransformUtil {
 	public static final String FILLER_INFORMACION_ADICIONAL_LIQUIDACION_COMPRAS = "182";
 	
 	// --------------------------------------------------------------------------------------------------------------------
-	// DEFINICION DE CABECERA DE COMPROBANTE DE RETENCION V2
+	// DEFINICION DE CABECERA DE COMPROBANTE DE RETENCION ATS
 	// --------------------------------------------------------------------------------------------------------------------
-	public static final String UGEC07_V2_TIPO_REGISTRO = "1";
-	public static final String UGEC07_V2_CODIGO_DOCUMENTO = "2";
-	public static final String UGEC07_V2_ESTABLECIMIENTO = "3";
-	public static final String UGEC07_V2_PUNTO_EMISION = "3";
-	public static final String UGEC07_V2_SECUENCIAL = "9";
-	public static final String UGEC07_V2_FECHA_EMISION = "8";
-	public static final String UGEC07_V2_HORA_EMISION = "6";
-	public static final String UGEC07_V2_DIRECCION_ESTABLECIMIENTO = "60";
-	public static final String UGEC07_V2_TIPO_IDENTIFICACION_RETENIDO = "2";
-	public static final String UGEC07_V2_RAZON_SOCIAL_RETENIDO = "80";
-	public static final String UGEC07_V2_IDENTIFICACION_RETENIDO = "13";
-	public static final String UGEC07_V2_PERIODO_FISCAL = "6";
-	public static final String UGEC07_V2_NUMERO_GENERADO = "8";
-	public static final String UGEC07_V2_FECHA_VIGENCIA = "8";
-	public static final String UGEC07_V2_OFICINA_BG = "3";
-	public static final String UGEC07_V2_SECUENCIAL_BG = "9";
-	public static final String UGEC07_V2_PORCENTAJE_IVA = "3";
-	public static final String UGEC07_V2_CLAVE_ACCESO_BG = "50";
-	public static final String UGEC07_V2_PARTE_RELACIONADA = "2";
-	public static final String UGEC07_V2_FORMA_PAGO = "2";
-	public static final String UGEC07_V2_TOTAL_PAGO = "13,2";
-	public static final String UGEC07_V2_FILLER_CABECERA_COMPROBANTE_RETENCION = "79";
+	public static final String UGEC07_ATS_TIPO_REGISTRO = "1";
+	public static final String UGEC07_ATS_COD_DOC = "2";
+	public static final String UGEC07_ATS_ESTAB = "3";
+	public static final String UGEC07_ATS_PTO_EMISION = "3";
+	public static final String UGEC07_ATS_SECUENCIAL = "9";
+	public static final String UGEC07_ATS_FECHA_EMISION = "8";
+	public static final String UGEC07_ATS_HORA_EMISION = "6";
+	public static final String UGEC07_ATS_DIR_ESTABLECIMIENTO = "60";
+	public static final String UGEC07_ATS_TIPO_IDENTIF_RETENIDO = "2";
+	public static final String UGEC07_ATS_RAZON_SOC_RETENIDO = "80";
+	public static final String UGEC07_ATS_ID_RETENIDO = "13";
+	public static final String UGEC07_ATS_PERIODO_FISCAL = "6";
+	public static final String UGEC07_ATS_NUM_GENERADO = "8";
+	public static final String UGEC07_ATS_FECHA_VIGENCIA = "8";
+	public static final String UGEC07_ATS_OFICINA_BG = "3";
+	public static final String UGEC07_ATS_SECUENCIAL_BG = "9";
+	public static final String UGEC07_ATS_PORC_IVA = "3";
+	public static final String UGEC07_ATS_ACCESO_BG = "50";
+	public static final String UGEC07_ATS_PARTEREL = "2";
+	public static final String UGEC07_ATS_LOCEXT = "2";
+	public static final String UGEC07_ATS_FORMA_PAGO = "2";
+	public static final String UGEC07_ATS_TOTAL_PAGO = "13,2";
 	
 	// --------------------------------------------------------------------------------------------------------------------
-	// DEFINICION DE DOCUMENTO SUSTENTO DE COMPROBANTE DE RETENCION V2
+	// DEFINICION DE DOCUMENTO SUSTENTO DE COMPROBANTE DE RETENCION ATS
 	// --------------------------------------------------------------------------------------------------------------------
-	public static final String UGEC07_V2_CODIGO_SUSTENTO = "2";
-	public static final String UGEC07_V2_CODIGO_DOCUMENTO_SUSTENTO = "2";
-	public static final String UGEC07_V2_NUMERO_DOCUMENTO_SUSTENTO = "20";
-	public static final String UGEC07_V2_FECHA_EMISION_DOCUMENTO_SUSTENTO = "8";
-	public static final String UGEC07_V2_FECHA_REGISTRO_CONTABLE = "8";
-	public static final String UGEC07_V2_NUMERO_AUTORIZACION_DOCUMENTO_SUSTENTO = "50";
-	public static final String UGEC07_V2_PAGO_LOCAL_EXTERIOR = "2";
-	public static final String UGEC07_V2_TOTAL_SIN_IMPUESTO = "13,2";
-	public static final String UGEC07_V2_IMPORTE_TOTAL = "13,2";
-	public static final String UGEC07_V2_TOTAL_COMPROBANTE_REEMBOLSO = "13,2";
-	public static final String UGEC07_V2_TOTAL_BASE_IMPUESTO_REEMBOLSO = "13,2";
-	public static final String UGEC07_V2_TOTAL_IMPUESTO_REEMBOLSO = "13,2";
-	public static final String UGEC07_V2_TIPO_REGIMEN = "2";
-	public static final String UGEC07_V2_PAIS_EFECTIVO_PAGO = "3";
-	public static final String UGEC07_V2_APLICA_CONVENIO_DOBLE_TRIB = "2";
-	public static final String UGEC07_V2_PAG_EXT_SUJ_RET_NOM_LEG = "2";
-	public static final String UGEC07_V2_PAGO_REG_FIS = "2";
+	public static final String UGED07_ATS_COD_SUSTENTO = "2";
+	public static final String UGED07_ATS_COD_DOC_SUSTENTO = "2";
+	public static final String UGED07_ATS_NUM_DOC_SUSTENTO = "20";
+	public static final String UGED07_ATS_FEC_EMI_DOC_SUSTENTO = "8";
+	public static final String UGED07_ATS_FEC_REGISTRO_CONTABLE = "8";
+	public static final String UGED07_ATS_NUM_AUTDOC_SUSTENTO = "50";
+	public static final String UGED07_ATS_TOTAL_SIN_IMPUESTO = "13,2";
+	public static final String UGED07_ATS_IMPORTE_TOTAL = "13,2";
+	public static final String UGED07_ATS_TOTAL_COMPROB_REEMB = "13,2";
+	public static final String UGED07_ATS_TOTAL_BASE_IMP_REEMB = "13,2";
+	public static final String UGED07_ATS_TOTAL_IMPUESTO_REEMB = "13,2";
+	public static final String UGED07_ATS_TIPO_REGI = "2";
+	public static final String UGED07_ATS_PAIS_EFECTIVO_PAGO = "3";
+	public static final String UGED07_ATS_APLIC_CONV_DOBLE_TRIB = "2";
+	public static final String UGED07_ATS_PAG_EXT_SUJ_RET_NOM_LEG = "2";
+	public static final String UGED07_ATS_PAGO_REG_FIS = "2";
+	public static final String UGED07_ATS_FORMA_PAGO_DOC_SUS = "2";
+	public static final String UGED07_ATS_COD_IMP_DOC_SUS = "1";
+	public static final String UGED07_ATS_COD_PORC_DOC_SUS = "4";
+	public static final String UGED07_ATS_BASE_IMPONIBLE_DOC_SUS = "13,2";
+	public static final String UGED07_ATS_TARIFA_DOC_SUS = "13,2";
+	public static final String UGED07_ATS_VALOR_IMPUESTO_DOC_SUS = "13,2";
 	
 	// --------------------------------------------------------------------------------------------------------------------
-	// DEFINICION DE RETENCION DE COMPROBANTE DE RETENCION V2
+	// DEFINICION DE RETENCION DE COMPROBANTE DE RETENCION ATS
 	// --------------------------------------------------------------------------------------------------------------------
-	public static final String UGEC07_V2_CODIGO = "1";
-	public static final String UGEC07_V2_CODIGO_RETENCION = "5";
-	public static final String UGEC07_V2_BASE_IMPONIBLE_RETENCION = "13,2";
-	public static final String UGEC07_V2_PORCENTAJE_RETENER = "3";
-	public static final String UGEC07_V2_VALOR_RETENIDO = "13,2";
-	public static final String UGEC07_V2_FECHA_PAGO_DIV = "8";
-	public static final String UGEC07_V2_IMPUESTO_RENTA_SOC = "13,2";
-	public static final String UGEC07_V2_EJERCICIO_FISCAL_ULT_DIV = "4";
+	public static final String UGER07_ATS_CODIGO = "1";
+	public static final String UGER07_ATS_CODIGO_RETENCION = "5";
+	public static final String UGER07_ATS_BASE_IMPONIBLE = "13,2";
+	public static final String UGER07_ATS_PORCENTAJE_RETENER = "3";
+	public static final String UGER07_ATS_VALOR_RETENIDO = "13,2";
+	public static final String UGER07_ATS_FECHA_PAGO_DIV = "8";
+	public static final String UGER07_ATS_IMP_RENTA_SOC = "13,2";
+	public static final String UGER07_ATS_EJERC_FIS_ULT_DIV = "4";
 	
 	// --------------------------------------------------------------------------------------------------------------------
-	// DEFINICION DE IMPUESTOS DE COMPROBANTE DE RETENCION V2
+	// DEFINICION DE IMPUESTOS DE COMPROBANTE DE RETENCION ATS
 	// --------------------------------------------------------------------------------------------------------------------
-	public static final String UGEC07_V2_CODIGO_DOCUMENTO_SUSTENTO_IMP = "1";
-	public static final String UGEC07_V2_CODIGO_PORCENTAJE = "5";
-	public static final String UGEC07_V2_BASE_IMPONIBLE = "13,2";
-	public static final String UGEC07_V2_TARIFA = "13,2";
-	public static final String UGEC07_V2_VALOR_IMPUESTO = "13,2";
+	public static final String UGEC07_ATS_CODIGO_DOCUMENTO_SUSTENTO_IMP = "1";
+	public static final String UGEC07_ATS_CODIGO_PORCENTAJE = "4";
+	public static final String UGEC07_ATS_BASE_IMPONIBLE = "13,2";
+	public static final String UGEC07_ATS_TARIFA = "13,2";
+	public static final String UGEC07_ATS_VALOR_IMPUESTO = "13,2";
 	
 	// --------------------------------------------------------------------------------------------------------------------
-	// DEFINICION DE INFORMACION ADICIONAL DE COMPROBANTE DE RETENCION V2
+	// DEFINICION DE INFORMACION ADICIONAL DE COMPROBANTE DE RETENCION ATS
 	// --------------------------------------------------------------------------------------------------------------------
-	public static final String UGEA07_V2_INFORMACION_ADICIONAL_INFO_ADICIONAL_1 = "100";
-	public static final String UGEA07_V2_INFORMACION_ADICIONAL_INFO_ADICIONAL_2 = "100";
+	public static final String UGEA07_ATS_INFORMACION_ADICIONAL_INFO_ADICIONAL_1 = "100";
+	public static final String UGEA07_ATS_INFORMACION_ADICIONAL_INFO_ADICIONAL_2 = "100";
+	public static final String UGEA07_V2_INFORMACION_ADICIONAL_INFO_ADICIONAL_3 = "100";
 
 }

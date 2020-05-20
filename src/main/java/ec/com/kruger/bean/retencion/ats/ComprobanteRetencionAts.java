@@ -7,26 +7,26 @@ public class ComprobanteRetencionAts implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private CabeceraComprobanteRetencionAts cabecera;
-	private List<DocumentoSustentoComprobanteRetencionAts> documentoSustentoLista;
+	private CabeceraAts cabeceraAts;
+	private List<DocumentoSustentoAts> documentoSustentoAtsLista;
 	private List<RetencionAts> retencionAtsLista;
 	private List<ImpuestoAts> impuestoAtsLista;
-	private List<InformacionAdicionalComprobanteRetencionAts> informacionAdicionalLista;
+	private List<InformacionAdicionalAts> informacionAdicionalAtsLista;
 
-	public CabeceraComprobanteRetencionAts getCabecera() {
-		return cabecera;
+	public CabeceraAts getCabeceraAts() {
+		return cabeceraAts;
 	}
 
-	public void setCabecera(CabeceraComprobanteRetencionAts cabecera) {
-		this.cabecera = cabecera;
+	public void setCabeceraAts(CabeceraAts cabeceraAts) {
+		this.cabeceraAts = cabeceraAts;
 	}
 
-	public List<DocumentoSustentoComprobanteRetencionAts> getDocumentoSustentoLista() {
-		return documentoSustentoLista;
+	public List<DocumentoSustentoAts> getDocumentoSustentoAtsLista() {
+		return documentoSustentoAtsLista;
 	}
 
-	public void setDocumentoSustentoLista(List<DocumentoSustentoComprobanteRetencionAts> documentoSustentoLista) {
-		this.documentoSustentoLista = documentoSustentoLista;
+	public void setDocumentoSustentoAtsLista(List<DocumentoSustentoAts> documentoSustentoAtsLista) {
+		this.documentoSustentoAtsLista = documentoSustentoAtsLista;
 	}
 
 	public List<RetencionAts> getRetencionAtsLista() {
@@ -45,17 +45,17 @@ public class ComprobanteRetencionAts implements Serializable {
 		this.impuestoAtsLista = impuestoAtsLista;
 	}
 
-	public List<InformacionAdicionalComprobanteRetencionAts> getInformacionAdicionalLista() {
-		return informacionAdicionalLista;
+	public List<InformacionAdicionalAts> getInformacionAdicionalAtsLista() {
+		return informacionAdicionalAtsLista;
 	}
 
-	public void setInformacionAdicionalLista(List<InformacionAdicionalComprobanteRetencionAts> informacionAdicionalLista) {
-		this.informacionAdicionalLista = informacionAdicionalLista;
+	public void setInformacionAdicionalAtsLista(List<InformacionAdicionalAts> informacionAdicionalAtsLista) {
+		this.informacionAdicionalAtsLista = informacionAdicionalAtsLista;
 	}
 
 	@Override
 	public String toString() {
-		return "ComprobanteRetencionAts [cabecera=" + cabecera + ", documentoSustentoLista=" + documentoSustentoLista + ", retencionAtsLista=" + retencionAtsLista + ", impuestoAtsLista=" + impuestoAtsLista + ", informacionAdicionalLista=" + informacionAdicionalLista + "]";
+		return "ComprobanteRetencionAts [cabeceraAts=" + cabeceraAts + ", documentoSustentoAtsLista=" + documentoSustentoAtsLista + ", retencionAtsLista=" + retencionAtsLista + ", impuestoAtsLista=" + impuestoAtsLista + ", informacionAdicionalAtsLista=" + informacionAdicionalAtsLista + "]";
 	}
 
 }

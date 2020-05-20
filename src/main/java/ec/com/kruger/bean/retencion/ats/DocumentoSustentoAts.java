@@ -2,7 +2,7 @@ package ec.com.kruger.bean.retencion.ats;
 
 import java.io.Serializable;
 
-public class DocumentoSustentoComprobanteRetencionAts implements Serializable {
+public class DocumentoSustentoAts implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -17,7 +17,6 @@ public class DocumentoSustentoComprobanteRetencionAts implements Serializable {
 	private String fechaEmisionDocumentoSustento;
 	private String fechaRegistroContable;
 	private String numeroAutorizacionDocumentoSustento;
-	private String pagoLocalExterior;
 	private String tipoRegi;
 	private String totalSinImpuesto;
 	private String importeTotal;
@@ -29,7 +28,12 @@ public class DocumentoSustentoComprobanteRetencionAts implements Serializable {
 	private String aplicaConvenioDobleTrib;
 	private String pagoExtSujRetNomLeg;
 	private String pagoRegFis;
-	private String fillerDocumentoSustentoComprobanteRetencion;
+	private String formaPagoDocSus;
+	private String codImpDocSus;
+	private String codPorcDocSus;
+	private String baseImponibleDocSus;
+	private String tarifaDocSus;
+	private String valorImpuestoDocSus;
 
 	public String getTipoRegistro() {
 		return tipoRegistro;
@@ -119,6 +123,14 @@ public class DocumentoSustentoComprobanteRetencionAts implements Serializable {
 		this.numeroAutorizacionDocumentoSustento = numeroAutorizacionDocumentoSustento;
 	}
 
+	public String getTipoRegi() {
+		return tipoRegi;
+	}
+
+	public void setTipoRegi(String tipoRegi) {
+		this.tipoRegi = tipoRegi;
+	}
+
 	public String getTotalSinImpuesto() {
 		return totalSinImpuesto;
 	}
@@ -199,36 +211,60 @@ public class DocumentoSustentoComprobanteRetencionAts implements Serializable {
 		this.pagoRegFis = pagoRegFis;
 	}
 
-	public String getFillerDocumentoSustentoComprobanteRetencion() {
-		return fillerDocumentoSustentoComprobanteRetencion;
+	public String getFormaPagoDocSus() {
+		return formaPagoDocSus;
 	}
 
-	public void setFillerDocumentoSustentoComprobanteRetencion(String fillerDocumentoSustentoComprobanteRetencion) {
-		this.fillerDocumentoSustentoComprobanteRetencion = fillerDocumentoSustentoComprobanteRetencion;
+	public void setFormaPagoDocSus(String formaPagoDocSus) {
+		this.formaPagoDocSus = formaPagoDocSus;
 	}
 
-	public String getPagoLocalExterior() {
-		return pagoLocalExterior;
+	public String getCodImpDocSus() {
+		return codImpDocSus;
 	}
 
-	public void setPagoLocalExterior(String pagoLocalExterior) {
-		this.pagoLocalExterior = pagoLocalExterior;
+	public void setCodImpDocSus(String codImpDocSus) {
+		this.codImpDocSus = codImpDocSus;
 	}
 
-	public String getTipoRegi() {
-		return tipoRegi;
+	public String getCodPorcDocSus() {
+		return codPorcDocSus;
 	}
 
-	public void setTipoRegi(String tipoRegi) {
-		this.tipoRegi = tipoRegi;
+	public void setCodPorcDocSus(String codPorcDocSus) {
+		this.codPorcDocSus = codPorcDocSus;
+	}
+
+	public String getBaseImponibleDocSus() {
+		return baseImponibleDocSus;
+	}
+
+	public void setBaseImponibleDocSus(String baseImponibleDocSus) {
+		this.baseImponibleDocSus = baseImponibleDocSus;
+	}
+
+	public String getTarifaDocSus() {
+		return tarifaDocSus;
+	}
+
+	public void setTarifaDocSus(String tarifaDocSus) {
+		this.tarifaDocSus = tarifaDocSus;
+	}
+
+	public String getValorImpuestoDocSus() {
+		return valorImpuestoDocSus;
+	}
+
+	public void setValorImpuestoDocSus(String valorImpuestoDocSus) {
+		this.valorImpuestoDocSus = valorImpuestoDocSus;
 	}
 
 	@Override
 	public String toString() {
-		return "DocumentoSustentoComprobanteRetencionAts [tipoRegistro=" + tipoRegistro + ", codigoDocumento=" + codigoDocumento + ", establecimiento=" + establecimiento + ", puntoEmision=" + puntoEmision + ", secuencial=" + secuencial + ", codigoSustento=" + codigoSustento + ", codigoDocumentoSustento=" + codigoDocumentoSustento + ", numeroDocumentoSustento=" + numeroDocumentoSustento
-				+ ", fechaEmisionDocumentoSustento=" + fechaEmisionDocumentoSustento + ", fechaRegistroContable=" + fechaRegistroContable + ", numeroAutorizacionDocumentoSustento=" + numeroAutorizacionDocumentoSustento + ", pagoLocalExterior=" + pagoLocalExterior + ", tipoRegi=" + tipoRegi + ", totalSinImpuesto=" + totalSinImpuesto + ", importeTotal=" + importeTotal
-				+ ", totalComprobanteReembolso=" + totalComprobanteReembolso + ", totalBaseImponibleReembolso=" + totalBaseImponibleReembolso + ", totalImpuestoReembolso=" + totalImpuestoReembolso + ", tipoRegimen=" + tipoRegimen + ", paisEfectivoPago=" + paisEfectivoPago + ", aplicaConvenioDobleTrib=" + aplicaConvenioDobleTrib + ", pagoExtSujRetNomLeg=" + pagoExtSujRetNomLeg + ", pagoRegFis="
-				+ pagoRegFis + ", fillerDocumentoSustentoComprobanteRetencion=" + fillerDocumentoSustentoComprobanteRetencion + "]";
+		return "DocumentoSustentoAts [tipoRegistro=" + tipoRegistro + ", codigoDocumento=" + codigoDocumento + ", establecimiento=" + establecimiento + ", puntoEmision=" + puntoEmision + ", secuencial=" + secuencial + ", codigoSustento=" + codigoSustento + ", codigoDocumentoSustento=" + codigoDocumentoSustento + ", numeroDocumentoSustento=" + numeroDocumentoSustento
+				+ ", fechaEmisionDocumentoSustento=" + fechaEmisionDocumentoSustento + ", fechaRegistroContable=" + fechaRegistroContable + ", numeroAutorizacionDocumentoSustento=" + numeroAutorizacionDocumentoSustento + ", tipoRegi=" + tipoRegi + ", totalSinImpuesto=" + totalSinImpuesto + ", importeTotal=" + importeTotal + ", totalComprobanteReembolso=" + totalComprobanteReembolso
+				+ ", totalBaseImponibleReembolso=" + totalBaseImponibleReembolso + ", totalImpuestoReembolso=" + totalImpuestoReembolso + ", tipoRegimen=" + tipoRegimen + ", paisEfectivoPago=" + paisEfectivoPago + ", aplicaConvenioDobleTrib=" + aplicaConvenioDobleTrib + ", pagoExtSujRetNomLeg=" + pagoExtSujRetNomLeg + ", pagoRegFis=" + pagoRegFis + ", formaPagoDocSus=" + formaPagoDocSus
+				+ ", codImpDocSus=" + codImpDocSus + ", codPorcDocSus=" + codPorcDocSus + ", baseImponibleDocSus=" + baseImponibleDocSus + ", tarifaDocSus=" + tarifaDocSus + ", valorImpuestoDocSus=" + valorImpuestoDocSus + "]";
 	}
 
 }

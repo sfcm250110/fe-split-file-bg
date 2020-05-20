@@ -2,7 +2,7 @@ package ec.com.kruger.bean.retencion.ats;
 
 import java.io.Serializable;
 
-public class InformacionAdicionalComprobanteRetencionAts implements Serializable {
+public class InformacionAdicionalAts implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -13,7 +13,8 @@ public class InformacionAdicionalComprobanteRetencionAts implements Serializable
 	private String secuencial;
 	private String informacionAdicionalUno;
 	private String informacionAdicionalDos;
-	private String fillerInformacionAdicionalComprobanteRetencion;
+	private String informacionAdicionalTres;
+	private String fillerInformacionAdicional;
 
 	public String getTipoRegistro() {
 		return tipoRegistro;
@@ -71,18 +72,26 @@ public class InformacionAdicionalComprobanteRetencionAts implements Serializable
 		this.informacionAdicionalDos = informacionAdicionalDos;
 	}
 
-	public String getFillerInformacionAdicionalComprobanteRetencion() {
-		return fillerInformacionAdicionalComprobanteRetencion;
+	public String getInformacionAdicionalTres() {
+		return informacionAdicionalTres;
 	}
 
-	public void setFillerInformacionAdicionalComprobanteRetencion(String fillerInformacionAdicionalComprobanteRetencion) {
-		this.fillerInformacionAdicionalComprobanteRetencion = fillerInformacionAdicionalComprobanteRetencion;
+	public void setInformacionAdicionalTres(String informacionAdicionalTres) {
+		this.informacionAdicionalTres = informacionAdicionalTres;
+	}
+
+	public String getFillerInformacionAdicional() {
+		return fillerInformacionAdicional;
+	}
+
+	public void setFillerInformacionAdicional(String fillerInformacionAdicional) {
+		this.fillerInformacionAdicional = fillerInformacionAdicional;
 	}
 
 	@Override
 	public String toString() {
-		return "InformacionAdicionalComprobanteRetencion [tipoRegistro=" + tipoRegistro + ", codigoDocumento=" + codigoDocumento + ", establecimiento=" + establecimiento + ", puntoEmision=" + puntoEmision + ", secuencial=" + secuencial + ", informacionAdicionalUno=" + informacionAdicionalUno + ", informacionAdicionalDos=" + informacionAdicionalDos
-				+ ", fillerInformacionAdicionalComprobanteRetencion=" + fillerInformacionAdicionalComprobanteRetencion + "]";
+		return "InformacionAdicionalAts [tipoRegistro=" + tipoRegistro + ", codigoDocumento=" + codigoDocumento + ", establecimiento=" + establecimiento + ", puntoEmision=" + puntoEmision + ", secuencial=" + secuencial + ", informacionAdicionalUno=" + informacionAdicionalUno + ", informacionAdicionalDos=" + informacionAdicionalDos + ", informacionAdicionalTres=" + informacionAdicionalTres
+				+ ", fillerInformacionAdicional=" + fillerInformacionAdicional + "]";
 	}
 
 }
