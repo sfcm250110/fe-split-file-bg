@@ -529,7 +529,7 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGER07_ATS_CODIGO = "1";
 	public static final String UGER07_ATS_CODIGO_RETENCION = "5";
 	public static final String UGER07_ATS_BASE_IMPONIBLE = "13,2";
-	public static final String UGER07_ATS_PORCENTAJE_RETENER = "3";
+	public static final String UGER07_ATS_PORCENTAJE_RETENER = "5,2";
 	public static final String UGER07_ATS_VALOR_RETENIDO = "13,2";
 	public static final String UGER07_ATS_FECHA_PAGO_DIV = "8";
 	public static final String UGER07_ATS_IMP_RENTA_SOC = "13,2";
