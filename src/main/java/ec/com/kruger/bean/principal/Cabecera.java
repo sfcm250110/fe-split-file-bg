@@ -2,10 +2,14 @@ package ec.com.kruger.bean.principal;
 
 import java.io.Serializable;
 
+/**
+ * @author kruger
+ *
+ */
 public class Cabecera implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private String ctrTipoRegistro;
 	private String ctrTransaccion;
 	private String ctrFechaProceso;
@@ -168,16 +172,11 @@ public class Cabecera implements Serializable {
 	public void setCtrOffLine(String ctrOffLine) {
 		this.ctrOffLine = ctrOffLine;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Cabecera [ctrTipoRegistro=" + ctrTipoRegistro + ", ctrTransaccion=" + ctrTransaccion + ", ctrFechaProceso=" + ctrFechaProceso + ", ctrHoraProceso=" + ctrHoraProceso + ", ctrCodigoEmpresa=" + ctrCodigoEmpresa + ", ctrRucEmpresa=" + ctrRucEmpresa + ", ctrAmbiente=" + ctrAmbiente + ", ctrTipoEmision=" + ctrTipoEmision
-				+ ", ctrContribEspecial=" + ctrContribEspecial + ", ctrObligadoContab=" + ctrObligadoContab + ", ctrRazonSocial=" + ctrRazonSocial + ", ctrNombreComercial=" + ctrNombreComercial + ", ctrDirMatriz=" + ctrDirMatriz + ", ctrPuntoVenta=" + ctrPuntoVenta + ", ctrNumeroRegistros=" + ctrNumeroRegistros + ", ctrNumeroComprobantes="
-				+ ctrNumeroComprobantes + ", ctrOffLine=" + ctrOffLine + ", ctrFiller=" + ctrFiller + "]";
+		return "Cabecera [ctrTipoRegistro=" + ctrTipoRegistro + ", ctrTransaccion=" + ctrTransaccion + ", ctrFechaProceso=" + ctrFechaProceso + ", ctrHoraProceso=" + ctrHoraProceso + ", ctrCodigoEmpresa=" + ctrCodigoEmpresa + ", ctrRucEmpresa=" + ctrRucEmpresa + ", ctrAmbiente=" + ctrAmbiente + ", ctrTipoEmision=" + ctrTipoEmision + ", ctrContribEspecial=" + ctrContribEspecial
+				+ ", ctrObligadoContab=" + ctrObligadoContab + ", ctrRazonSocial=" + ctrRazonSocial + ", ctrNombreComercial=" + ctrNombreComercial + ", ctrDirMatriz=" + ctrDirMatriz + ", ctrPuntoVenta=" + ctrPuntoVenta + ", ctrNumeroRegistros=" + ctrNumeroRegistros + ", ctrNumeroComprobantes=" + ctrNumeroComprobantes + ", ctrOffLine=" + ctrOffLine + ", ctrFiller=" + ctrFiller + "]";
 	}
-	
-	
-	
-	
 
 }

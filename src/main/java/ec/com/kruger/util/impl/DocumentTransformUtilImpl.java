@@ -403,4 +403,25 @@ public class DocumentTransformUtilImpl implements DocumentTransformUtil, Seriali
 		return lineProperty;
 	}
 
+	public static Integer obtenerVersionComprobanteRetencion(String pRetencion) {
+		List<String> lista = Arrays.asList(pRetencion.split(BREAL_LINE));
+		Integer versionComprobanteRetencion = 0;
+
+		for (String linea : lista) {
+			String tipoLinea = getTipoLinea(linea);
+
+			if (tipoLinea.equals(TIPO_LINEA_DET) || tipoLinea.equals(TIPO_LINEA_RET)) {
+				// Si el archivo tiene las lineas que corresponden a los tags: docSustento(TIPO_LINEA_DET) y retencion(TIPO_LINEA_RET)
+				// Pertence a la version de Ats
+				versionComprobanteRetencion = 2;
+				break;
+
+			} else {
+				versionComprobanteRetencion = 1;
+			}
+		}
+
+		return versionComprobanteRetencion;
+	}
+
 }
