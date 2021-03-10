@@ -107,7 +107,7 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGED01_CODIGO_PRINCIPAL = "8";
 	public static final String UGED01_CODIGO_AUX = "2";
 	public static final String UGED01_DESCRIPCION = "65";
-	public static final String UGED01_CANTIDAD = "7,2";
+	public static final String UGED01_CANTIDAD = "10,2";
 	public static final String UGED01_PRECIO_UNITARIO = "12,2";
 	public static final String UGED01_DESCUENTO = "12,2";
 	public static final String UGED01_PRECIO_TOTAL_SIN_IMP = "12,2";
@@ -209,7 +209,7 @@ public abstract interface DocumentTransformUtil {
 	public static final String UGED04_CODIGO_INTERNO = "8";
 	public static final String UGED04_CODIGO_ADICIONAL = "2";
 	public static final String UGED04_DESCRIPCION = "65";
-	public static final String UGED04_CANTIDAD = "7,2";
+	public static final String UGED04_CANTIDAD = "10,2";
 	public static final String UGED04_PRECIO_UNITARIO = "12,2";
 	public static final String UGED04_DESCUENTO = "12,2";
 	public static final String UGED04_PRECIO_TOTAL_SIN_IMP = "12,2";
